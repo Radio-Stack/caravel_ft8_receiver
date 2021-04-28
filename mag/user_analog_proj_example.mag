@@ -1,0 +1,12 @@
+magic
+tech sky130A
+timestamp 1619633068
+use simple_por  simple_por_1
+timestamp 1619633068
+transform 1 0 7066 0 1 -11
+box 0 0 5672 4169
+use simple_por  simple_por_0
+timestamp 1619633068
+transform 1 0 -13 0 1 -7
+box 0 0 5672 4169
+<< end >>

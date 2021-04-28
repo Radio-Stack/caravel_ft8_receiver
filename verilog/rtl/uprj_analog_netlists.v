@@ -12,15 +12,26 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
+/*--------------------------------------------------------------*/
+/* caravel, a project harness for the Google/SkyWater sky130	*/
+/* fabrication process and open source PDK			*/
+/*                                                          	*/
+/* Copyright 2020 efabless, Inc.                            	*/
+/* Written by Tim Edwards, December 2019                    	*/
+/* and Mohamed Shalan, August 2020			    	*/
+/* This file is open source hardware released under the     	*/
+/* Apache 2.0 license.  See file LICENSE.                   	*/
+/*                                                          	*/
+/*--------------------------------------------------------------*/
 
-// Include caravel global defines for the number of the user project IO pads 
 `include "defines.v"
 `define USE_POWER_PINS
 
 `ifdef GL
-    // Assume default net type to be wire because GL netlists don't have the wire definitions
     `default_nettype wire
     `include "gl/user_analog_project_wrapper.v"
+    `include "gl/user_analog_proj_example.v"
 `else
     `include "user_analog_project_wrapper.v"
+    `include "user_analog_proj_example.v"
 `endif
