@@ -1,12 +1,18 @@
 magic
 tech sky130A
-timestamp 1619633287
-use simple_por  simple_por_1
-timestamp 1619633287
-transform 1 0 7066 0 1 -11
-box 0 0 5672 4169
-use simple_por  simple_por_0
-timestamp 1619633287
-transform 1 0 -13 0 1 -7
-box 0 0 5672 4169
+magscale 1 2
+timestamp 1619730755
+<< error_p >>
+rect 6208 7870 6223 7898
+rect 6236 7676 6251 7870
+rect 20366 7862 20381 7890
+rect 20394 7668 20409 7862
+use example_por  example_por_0
+timestamp 1619730755
+transform 1 0 -26 0 1 -14
+box 0 0 11344 8338
+use example_por  example_por_1
+timestamp 1619730755
+transform 1 0 14132 0 1 -22
+box 0 0 11344 8338
 << end >>
