@@ -145,7 +145,6 @@ model=nfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/res_xhigh_po_0p69.sym} 1930 -190 0 0 {name=R1
-W=0.69
 L=500
 model=res_xhigh_po_0p69
 spiceprefix=X
@@ -179,7 +178,6 @@ model=nfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/res_xhigh_po_0p69.sym} 1930 30 0 0 {name=R2
-W=0.69
 L=150
 model=res_xhigh_po_0p69
 spiceprefix=X
@@ -283,7 +281,6 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {sky130_fd_pr/res_xhigh_po_0p69.sym} 1810 30 0 1 {name=R3
-W=0.69
 L=25
 model=res_xhigh_po_0p69
 spiceprefix=X
