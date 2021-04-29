@@ -32,5 +32,10 @@ C {devices/opin.sym} -350 -130 0 1 {name=p2 lab=vdd1v8}
 C {devices/opin.sym} 180 -50 0 0 {name=p3 lab=porb_h}
 C {devices/opin.sym} 180 -20 0 0 {name=p4 lab=porb_l}
 C {devices/opin.sym} 180 10 0 0 {name=p5 lab=por_l}
-C {devices/code.sym} 140 -270 0 0 {name=s1 only_toplevel=false value=".lib /usr/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt"}
-C {devices/code.sym} 260 -270 0 0 {name=s2 only_toplevel=false value=".include /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice"}
+C {devices/code_shown.sym} -470 140 0 0 {name=s1 only_toplevel=false value=".param mc_switch=0
+.lib /usr/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice"}
+C {devices/code_shown.sym} -470 250 0 0 {name=s2 only_toplevel=false value=".control
+tran 1u 20m
+plot V(vdd3v3) V(vdd1v8) V(porb_h) V(porb_l) V(por_l)
+.endc"}

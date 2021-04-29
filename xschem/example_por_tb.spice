@@ -1,5 +1,4 @@
 **.subckt example_por_tb vdd3v3 vdd1v8 porb_h porb_l por_l
-.param mc_switch=0
 *.opin vdd3v3
 *.opin vdd1v8
 *.opin porb_h
@@ -10,10 +9,10 @@ V1 vdd3v3 GND PWL(0.0 0 100u 0 5m 3.3)
 V2 vdd1v8 GND PWL(0.0 0 300u 0 5.3m 1.8)
 **** begin user architecture code
 
+.param mc_switch=0
 .lib /usr/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-
-
 .include /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+
 
 .control
 tran 1u 20m
@@ -34,7 +33,7 @@ plot V(vdd3v3) V(vdd1v8) V(porb_h) V(porb_l) V(por_l)
 *.opin por_l
 *.iopin vdd1v8
 XC1 net9 vss sky130_fd_pr__cap_mim_m3_1 W=30 L=30 MF=1 m=1
-XC2 net9 vss sky130_fd_pr__cap_mim_m3_2 W=30 L=30 MF=1 m=1
+XC2 vss net9 sky130_fd_pr__cap_mim_m3_2 W=30 L=30 MF=1 m=1
 XM1 net3 net7 net5 vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 L=0.8 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 

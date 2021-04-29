@@ -102,62 +102,37 @@ Circuit 1: example_por                     |Circuit 2: example_por
 sky130_fd_pr__cap_mim_m3_2 (1)             |sky130_fd_pr__cap_mim_m3_2 (1)             
 sky130_fd_sc_hvl__buf_8 (2)                |sky130_fd_sc_hvl__buf_8 (2)                
 sky130_fd_pr__pfet_g5v0d10v5 (8)           |sky130_fd_pr__pfet_g5v0d10v5 (8)           
-sky130_fd_pr__nfet_g5v0d10v5 (3)           |sky130_fd_pr__nfet_g5v0d10v5 (5) **Mismatc 
+sky130_fd_pr__nfet_g5v0d10v5 (3)           |sky130_fd_pr__nfet_g5v0d10v5 (3)           
 sky130_fd_pr__res_xhigh_po_0p69 (3)        |sky130_fd_pr__res_xhigh_po_0p69 (3)        
 sky130_fd_sc_hvl__schmittbuf_1 (1)         |sky130_fd_sc_hvl__schmittbuf_1 (1)         
 sky130_fd_pr__cap_mim_m3_1 (1)             |sky130_fd_pr__cap_mim_m3_1 (1)             
 sky130_fd_sc_hvl__inv_8 (1)                |sky130_fd_sc_hvl__inv_8 (1)                
-Number of devices: 20 **Mismatch**         |Number of devices: 22 **Mismatch**         
-Number of nets: 16 **Mismatch**            |Number of nets: 18 **Mismatch**            
+Number of devices: 20                      |Number of devices: 20                      
+Number of nets: 16                         |Number of nets: 16                         
 ---------------------------------------------------------------------------------------
-NET mismatches: Class fragments follow (with fanout counts):
-Circuit 1: example_por                     |Circuit 2: example_por                     
+Circuits match uniquely.
+Property errors were found.
+Netlists match uniquely.
+There were property errors.
+sky130_fd_pr__res_xhigh_po_0p69_S5N9F3_0/sky130_fd_pr__res_xhigh_po_0p693 vs. sky130_fd_pr__res_xhigh_po_0p69R1:
+Property W in circuit2 has no matching property in circuit1
+sky130_fd_pr__res_xhigh_po_0p69_S5N9F3_0/sky130_fd_pr__res_xhigh_po_0p690 vs. sky130_fd_pr__res_xhigh_po_0p69R2:
+Property W in circuit2 has no matching property in circuit1
+sky130_fd_pr__res_xhigh_po_0p69_S5N9F3_0/sky130_fd_pr__res_xhigh_po_0p6918 vs. sky130_fd_pr__res_xhigh_po_0p69R3:
+Property W in circuit2 has no matching property in circuit1
 
----------------------------------------------------------------------------------------
-Net: vss                                   |Net: vss                                   
-  sky130_fd_pr__cap_mim_m3_1/2 = 1         |  sky130_fd_pr__cap_mim_m3_1/2 = 1         
-  sky130_fd_pr__cap_mim_m3_2/1 = 1         |  sky130_fd_pr__cap_mim_m3_2/2 = 1         
-  sky130_fd_pr__nfet_g5v0d10v5/(1|3) = 3   |  sky130_fd_pr__nfet_g5v0d10v5/(1|3) = 3   
-  sky130_fd_pr__nfet_g5v0d10v5/4 = 3       |  sky130_fd_pr__nfet_g5v0d10v5/4 = 5       
-  sky130_fd_pr__res_xhigh_po_0p69/3 = 3    |  sky130_fd_pr__res_xhigh_po_0p69/3 = 3    
-  sky130_fd_pr__res_xhigh_po_0p69/(1|2) =  |  sky130_fd_pr__res_xhigh_po_0p69/(1|2) =  
-  sky130_fd_sc_hvl__buf_8/VGND = 2         |  sky130_fd_sc_hvl__buf_8/VGND = 2         
-  sky130_fd_sc_hvl__buf_8/VNB = 2          |  sky130_fd_sc_hvl__buf_8/VNB = 2          
-  sky130_fd_sc_hvl__inv_8/VGND = 1         |  sky130_fd_sc_hvl__inv_8/VGND = 1         
-  sky130_fd_sc_hvl__inv_8/VNB = 1          |  sky130_fd_sc_hvl__inv_8/VNB = 1          
-  sky130_fd_sc_hvl__schmittbuf_1/VGND = 1  |  sky130_fd_sc_hvl__schmittbuf_1/VGND = 1  
-  sky130_fd_sc_hvl__schmittbuf_1/VNB = 1   |  sky130_fd_sc_hvl__schmittbuf_1/VNB = 1   
-                                           |                                           
-Net: sky130_fd_sc_hvl__schmittbuf_1_0/A    |Net: net4                                  
-  sky130_fd_pr__cap_mim_m3_2/2 = 1         |  sky130_fd_pr__nfet_g5v0d10v5/2 = 2       
-  sky130_fd_sc_hvl__schmittbuf_1/A = 1     |  sky130_fd_pr__nfet_g5v0d10v5/(1|3) = 2   
-  sky130_fd_pr__pfet_g5v0d10v5/(1|3) = 1   |                                           
-  sky130_fd_pr__cap_mim_m3_1/1 = 1         |                                           
-                                           |                                           
-(no matching net)                          |Net: net1                                  
-                                           |  sky130_fd_pr__nfet_g5v0d10v5/(1|3) = 2   
-                                           |                                           
-(no matching net)                          |Net: net11                                 
-                                           |  sky130_fd_pr__cap_mim_m3_1/1 = 1         
-                                           |  sky130_fd_pr__cap_mim_m3_2/1 = 1         
-                                           |  sky130_fd_pr__pfet_g5v0d10v5/(1|3) = 1   
-                                           |  sky130_fd_sc_hvl__schmittbuf_1/A = 1     
----------------------------------------------------------------------------------------
-DEVICE mismatches: Class fragments follow (with node fanout counts):
+Subcircuit pins:
 Circuit 1: example_por                     |Circuit 2: example_por                     
-
+-------------------------------------------|-------------------------------------------
+vdd3v3                                     |vdd3v3                                     
+porb_h                                     |porb_h                                     
+porb_l                                     |porb_l                                     
+por_l                                      |por_l                                      
+vdd1v8                                     |vdd1v8                                     
+vss                                        |vss                                        
 ---------------------------------------------------------------------------------------
-(no matching instance)                     |Instance: sky130_fd_pr__nfet_g5v0d10v5M5   
-                                           |  (1,3) = (24,4)                           
-                                           |  2 = 4                                    
-                                           |  4 = 24                                   
-                                           |                                           
-                                           |                                           
-(no matching instance)                     |Instance: sky130_fd_pr__nfet_g5v0d10v5M2   
-                                           |  (1,3) = (24,2)                           
-                                           |  2 = 4                                    
-                                           |  4 = 24                                   
-                                           |                                           
----------------------------------------------------------------------------------------
-Netlists do not match.
-Netlists do not match.
+Cell pin lists are equivalent.
+Device classes example_por and example_por are equivalent.
+Circuits match uniquely.
+Property errors were found.
+The following cells had property errors: example_por
