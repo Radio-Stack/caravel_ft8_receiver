@@ -13,7 +13,7 @@ project:
     - "Open MPW"
     - "Test Harness"
   category: "Test Harness"
-  top_level_netlist: "caravel/verilog/gl/caravel.v"
+  top_level_netlist: "caravel/verilog/gl/caravan.v"
   user_level_netlist: "verilog/gl/user_analog_project_wrapper.v"
   version: "1.00"
   cover_image: "docs/source/_static/caravel_harness.png"
