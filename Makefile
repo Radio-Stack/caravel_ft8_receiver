@@ -15,7 +15,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 CARAVEL_ROOT?=$(PWD)/caravel
-PRECHECK_ROOT?=${HOME}/precheck
+PRECHECK_ROOT?=${HOME}/open_mpw_precheck
 SIM ?= RTL
 
 # Install lite version of caravel, (1): caravel-lite, (0): caravel
@@ -24,11 +24,11 @@ CARAVEL_LITE?=1
 ifeq ($(CARAVEL_LITE),1) 
 	CARAVEL_NAME := caravel-lite
 	CARAVEL_REPO := https://github.com/efabless/caravel-lite 
-	CARAVEL_COMMIT := main
+	CARAVEL_BRANCH := main
 else
 	CARAVEL_NAME := caravel
 	CARAVEL_REPO := https://github.com/efabless/caravel 
-	CARAVEL_COMMIT := master
+	CARAVEL_BRANCH := master
 endif
 
 # Install caravel as submodule, (1): submodule, (0): clone
@@ -56,7 +56,7 @@ DV_PATTERNS = $(foreach dv, $(PATTERNS), verify-$(dv))
 TARGET_PATH=$(shell pwd)
 PDK_PATH=${PDK_ROOT}/sky130A
 VERIFY_COMMAND="cd ${TARGET_PATH}/verilog/dv/$* && export SIM=${SIM} && make"
-$(DV_PATTERNS): verify-% : 
+$(DV_PATTERNS): verify-% : ./verilog/dv/% 
 	docker run -v ${TARGET_PATH}:${TARGET_PATH} -v ${PDK_PATH}:${PDK_PATH} \
                 -v ${CARAVEL_ROOT}:${CARAVEL_ROOT} \
                 -e TARGET_PATH=${TARGET_PATH} -e PDK_PATH=${PDK_PATH} \
@@ -79,12 +79,12 @@ ifeq ($(SUBMODULE),1)
 	$(eval CARAVEL_PATH := $(shell realpath --relative-to=$(shell pwd) $(CARAVEL_ROOT)))
 	@if [ ! -d $(CARAVEL_ROOT) ]; then git submodule add --name $(CARAVEL_NAME) $(CARAVEL_REPO) $(CARAVEL_PATH); fi
 	@git submodule update --init
-	@cd $(CARAVEL_ROOT); git checkout $(CARAVEL_COMMIT)
+	@cd $(CARAVEL_ROOT); git checkout $(CARAVEL_BRANCH)
 	$(MAKE) simlink
 else
 	@echo "Installing $(CARAVEL_NAME).."
 	@git clone $(CARAVEL_REPO) $(CARAVEL_ROOT)
-	@cd $(CARAVEL_ROOT); git checkout $(CARAVEL_COMMIT)
+	@cd $(CARAVEL_ROOT); git checkout $(CARAVEL_BRANCH)
 endif
 
 # Create symbolic links to caravel's main files
@@ -92,7 +92,7 @@ endif
 simlink: check-caravel
 ### Symbolic links relative path to $CARAVEL_ROOT 
 	$(eval MAKEFILE_PATH := $(shell realpath --relative-to=openlane $(CARAVEL_ROOT)/openlane/Makefile))
-	$(eval PIN_CFG_PATH  := $(shell realpath --relative-to=openlane/user_analog_project_wrapper $(CARAVEL_ROOT)/openlane/user_analog_project_wrapper_empty/pin_order.cfg))
+	$(eval PIN_CFG_PATH  := $(shell realpath --relative-to=openlane/user_project_wrapper $(CARAVEL_ROOT)/openlane/user_project_wrapper_empty/pin_order.cfg))
 	mkdir -p openlane
 	mkdir -p openlane/user_project_wrapper
 	cd openlane &&\
@@ -145,7 +145,12 @@ run-precheck: check-precheck check-pdk check-caravel
 	$(eval TARGET_PATH := $(shell pwd))
 	cd $(PRECHECK_ROOT) && \
 	docker run -v $(PRECHECK_ROOT):/usr/local/bin -v $(TARGET_PATH):$(TARGET_PATH) -v $(PDK_ROOT):$(PDK_ROOT) -v $(CARAVEL_ROOT):$(CARAVEL_ROOT) \
-	-u $(shell id -u $(USER)):$(shell id -g $(USER)) efabless/open_mpw_precheck:latest bash -c "python3 open_mpw_prechecker.py --pdk_root $(PDK_ROOT) --target_path $(TARGET_PATH) -c $(CARAVEL_ROOT)"
+	-u $(shell id -u $(USER)):$(shell id -g $(USER)) efabless/open_mpw_precheck:latest bash -c "python3 open_mpw_prechecker.py --pdk_root $(PDK_ROOT) --target_path $(TARGET_PATH) -rfc -c $(CARAVEL_ROOT) "
+
+# Install PDK using OL's Docker Image
+.PHONY: pdk-nonnative
+pdk-nonnative: skywater-pdk skywater-library skywater-timing open_pdks
+	docker run --rm -v $(PDK_ROOT):$(PDK_ROOT) -v $(pwd):/user_project -v $(CARAVEL_ROOT):$(CARAVEL_ROOT) -e CARAVEL_ROOT=$(CARAVEL_ROOT) -e PDK_ROOT=$(PDK_ROOT) -u $(shell id -u $(USER)):$(shell id -g $(USER)) efabless/openlane:current sh -c "cd $(CARAVEL_ROOT); make build-pdk; make gen-sources"
 
 # Clean 
 .PHONY: clean
@@ -170,3 +175,8 @@ check-pdk:
 		echo "PDK Root: "$(PDK_ROOT)" doesn't exists, please export the correct path before running make. "; \
 		exit 1; \
 	fi
+
+.PHONY: help
+help:
+	cd $(CARAVEL_ROOT) && $(MAKE) help 
+	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
