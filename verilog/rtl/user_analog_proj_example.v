@@ -134,42 +134,42 @@ module user_analog_proj_example (
     wire [`MPRJ_IO_PADS-`ANALOG_PADS-1:0] io_oeb;
     wire [`ANALOG_PADS-1:0] io_analog;
 
-    wire [31:0] rdata; 
-    wire [31:0] wdata;
+    // wire [31:0] rdata; 
+    // wire [31:0] wdata;
 
-    wire valid;
-    wire [3:0] wstrb;
+    // wire valid;
+    // wire [3:0] wstrb;
 
     wire isupply;	// Independent 3.3V supply
     wire io16, io15, io12, io11;
 
     // WB MI A
-    assign valid = wbs_cyc_i && wbs_stb_i; 
-    assign wstrb = wbs_sel_i & {4{wbs_we_i}};
-    assign wbs_dat_o = rdata;
-    assign wdata = wbs_dat_i;
+    // assign valid = wbs_cyc_i && wbs_stb_i; 
+    // assign wstrb = wbs_sel_i & {4{wbs_we_i}};
+    // assign wbs_dat_o = rdata;
+    // assign wdata = wbs_dat_i;
 
-    // IO --- unused
-    assign io_out[`MPRJ_IO_PADS-`ANALOG_PADS-1:17] = 0;
-    assign io_out[14:13] = 11'b0;
-    assign io_out[10:0] = 11'b0;
+    // IO --- unused (no need to connect to anything)
+    // assign io_out[`MPRJ_IO_PADS-`ANALOG_PADS-1:17] = 0;
+    // assign io_out[14:13] = 11'b0;
+    // assign io_out[10:0] = 11'b0;
 
-    assign io_oeb[`MPRJ_IO_PADS-`ANALOG_PADS-1:17] = -1;
-    assign io_oeb[14:13] = 11'b1;
-    assign io_oeb[10:0] = 11'b1;
+    // assign io_oeb[`MPRJ_IO_PADS-`ANALOG_PADS-1:17] = -1;
+    // assign io_oeb[14:13] = 11'b1;
+    // assign io_oeb[10:0] = 11'b1;
 
     // IO --- enable outputs on 11, 12, 15, and 16
     assign io_out[12:11] = {io12, io11};
-    assign io_oeb[12:11] = 2'b0;
+    assign io_oeb[12:11] = {vssd1, vssd1};
 
     assign io_out[16:15] = {io16, io15};
-    assign io_oeb[16:15] = 2'b0;
+    assign io_oeb[16:15] = {vssd1, vssd1};
 
     // IRQ
     assign irq = 3'b000;	// Unused
 
-    // LA
-    assign la_data_out = {128{1'b0}};	// Unused
+    // LA --- unused (no need to connect to anything)
+    // assign la_data_out = {128{1'b0}};	// Unused
 
     // Instantiate the POR.  Connect the digital power to user area 1
     // VCCD, and connect the analog power to user area 1 VDDA.
