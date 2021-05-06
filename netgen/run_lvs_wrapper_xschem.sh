@@ -16,7 +16,7 @@
 
 #--------------------------------------------------------------------------------
 # Run LVS on the user_analog_project_wrapper layout, comparing against the
-# top-level verilog module
+# top-level xschem subcircuit from the wrapper testbench.
 #
 #--------------------------------------------------------------------------------
-netgen -batch lvs "user_analog_project_wrapper.spice user_analog_project_wrapper" "../verilog/rtl/user_analog_proj_example.v user_analog_proj_example" /usr/share/pdk/sky130A/libs.tech/netgen/sky130A_setup.tcl comp.out
+netgen -batch lvs "user_analog_project_wrapper.spice user_analog_project_wrapper" "../xschem/analog_wrapper_tb.spice user_analog_project_wrapper" /usr/share/pdk/sky130A/libs.tech/netgen/sky130A_setup.tcl comp.out
