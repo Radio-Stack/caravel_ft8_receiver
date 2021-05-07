@@ -19,7 +19,7 @@
 .SUFFIXES:
 .SILENT: clean all
 
-PATTERNS = 
+PATTERNS = mprj_por
 
 all:  ${PATTERNS}
 	for i in ${PATTERNS}; do \
