@@ -25,7 +25,7 @@ Caravel Analog User Project
 
 .. |License| image:: https://img.shields.io/badge/License-Apache%202.0-blue.svg
    :target: https://opensource.org/licenses/Apache-2.0
-.. |User CI| image:: https://github.com/efabless/caravel_project_example/actions/workflows/user_project_ci.yml/badge.svg
-   :target: https://github.com/efabless/caravel_project_example/actions/workflows/user_project_ci.yml
-.. |Caravan Build| image:: https://github.com/efabless/caravel_project_example/actions/workflows/caravan_build.yml/badge.svg
-   :target: https://github.com/efabless/caravel_project_example/actions/workflows/caravan_build.yml
+.. |User CI| image:: https://github.com/efabless/caravel_user_project_analog/actions/workflows/user_project_ci.yml/badge.svg
+   :target: https://github.com/efabless/caravel_user_project_analog/actions/workflows/user_project_ci.yml
+.. |Caravan Build| image:: https://github.com/efabless/caravel_user_project_analog/actions/workflows/caravan_build.yml/badge.svg
+   :target: https://github.com/efabless/caravel_user_project_analog/actions/workflows/caravan_build.yml
