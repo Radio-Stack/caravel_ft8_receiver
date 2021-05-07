@@ -92,13 +92,9 @@ endif
 simlink: check-caravel
 ### Symbolic links relative path to $CARAVEL_ROOT 
 	$(eval MAKEFILE_PATH := $(shell realpath --relative-to=openlane $(CARAVEL_ROOT)/openlane/Makefile))
-	$(eval PIN_CFG_PATH  := $(shell realpath --relative-to=openlane/user_project_wrapper $(CARAVEL_ROOT)/openlane/user_project_wrapper_empty/pin_order.cfg))
 	mkdir -p openlane
-	mkdir -p openlane/user_project_wrapper
 	cd openlane &&\
 	ln -sf $(MAKEFILE_PATH) Makefile
-	cd openlane/user_project_wrapper &&\
-	ln -sf $(PIN_CFG_PATH) pin_order.cfg
 
 # Update Caravel
 .PHONY: update_caravel
@@ -142,10 +138,11 @@ precheck:
 
 .PHONY: run-precheck
 run-precheck: check-precheck check-pdk check-caravel
+	rm -rf $(PWD)/checks
 	$(eval TARGET_PATH := $(shell pwd))
 	cd $(PRECHECK_ROOT) && \
 	docker run -v $(PRECHECK_ROOT):/usr/local/bin -v $(TARGET_PATH):$(TARGET_PATH) -v $(PDK_ROOT):$(PDK_ROOT) -v $(CARAVEL_ROOT):$(CARAVEL_ROOT) \
-	-u $(shell id -u $(USER)):$(shell id -g $(USER)) efabless/open_mpw_precheck:latest bash -c "python3 open_mpw_prechecker.py --pdk_root $(PDK_ROOT) --target_path $(TARGET_PATH) -rfc -c $(CARAVEL_ROOT) "
+	-u $(shell id -u $(USER)):$(shell id -g $(USER)) efabless/open_mpw_precheck:latest bash -c "python3 open_mpw_prechecker.py --pdk_root $(PDK_ROOT) --target_path $(TARGET_PATH) -rfc -c $(CARAVEL_ROOT) --analog -ms develop"
 
 # Install PDK using OL's Docker Image
 .PHONY: pdk-nonnative
