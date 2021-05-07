@@ -9,7 +9,7 @@ V1 vdd3v3 GND PWL(0.0 0 100u 0 5m 3.3)
 V2 vdd1v8 GND PWL(0.0 0 300u 0 5.3m 1.8)
 **** begin user architecture code
 
-.param mc_switch=0
+.param mc_mm_switch=0
 .lib /usr/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 .include /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
 

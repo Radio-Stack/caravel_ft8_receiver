@@ -20,7 +20,7 @@
 * Result:  0.7575V
 *-------------------------------------------------------------------
 
-.param mc_switch=0
+.param mc_mm_switch=0
 .lib /usr/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 
 *----------------------------
