@@ -29,8 +29,10 @@ Table of contents
 -  `Overview <#overview>`__
 -  `Install Caravel <#install-caravel>`__
 -  `Caravel Integration <#caravel-integration>`__
-   - `User Project: Power on Reset` <#user-project:-power-on-reset>
+
+   - `User Project: Power on Reset <#user-project-power-on-reset>`_
    -  `Verilog Integration <#verilog-integration>`__
+   
 -  `Running Full Chip Simulation <#running-full-chip-simulation>`__
 - `Other Miscellaneous Targets <#other-miscellaneous-targets>`_
 -  `Checklist for Open-MPW
@@ -77,8 +79,8 @@ calling make install.
 
     export CARAVEL_LITE=0
  
- Caravel Integration
-===================
+Caravel Integration
+=====================
 
 
 User Project: Power on Reset
