@@ -87,7 +87,21 @@ Caravel Integration
 User Project: Power on Reset
 ----------------------------
 
-> :construction: Under construction :construction:
+This is an example user analog project which breaks out the power-on-reset
+circuit used by the management SoC for power-up behavior so that the circuit
+input and output can be independently controlled and measured.
+
+The power-on-reset circuit itself is a simple, non-temperature-compensated
+analog delay calibrated to 15ms under nominal conditions, with a Schmitt
+trigger inverter to provide hysteresis around the trigger point to provide
+a clean output reset signal. 
+
+The circuit provides a single high-voltage (3.3V domain) sense-inverted reset
+signal "porb_h" and complementary low-voltage (1.8V domain) reset signals
+"por_l" and "porb_l".
+
+The only input to the circuit is the 3.3V domain power supply itself.
+
 
 Verilog Integration
 -------------------
@@ -99,6 +113,16 @@ The wrapper top module must be named ``user_analog_project_wrapper`` and must
 have the same input and output ports as the analog wrapper template. The wrapper gives access to the
 user space utilities provided by caravel like IO ports, logic analyzer
 probes, and wishbone bus connection to the management SoC.
+
+The verilog modules instantiated in the wrapper module should represent
+the analog project;  they need not be more than empty blocks, but it is
+encouraged to write a simple behavioral description of the analog circuit
+in standard verilog, using real-valued wires when necessary.  This allows
+the whole system to be run in a verilog testbench and verify the connectivity
+to the padframe and management SoC, even if the testbench C code does nothing
+more than set the mode of each GPIO pin.  The example top-level verilog code
+emulates the behavior of the power-on-reset delay after applying a valid
+power supply to the circuit.
 
 
 Building the PDK 
@@ -165,7 +189,58 @@ The verilog test-benches are under this directory
 Analog Design Flow
 ===================
 
-> :construction: Under construction :construction:
+The example project uses a very simple analog design flow with schematics
+made with xschem, simulation done using ngspice, layout done with magic,
+and LVS verification done with netgen.  Sources for the power-on-reset
+circuit are in the "xschem/" directory, which also includes a schematic
+representing the wrapper with all of its ports, for use in a testbench
+circuit.  There are several testbenches in the example, starting from
+tests of the component devices to a full test of the completed project
+inside the wrapper.
+
+There is no automation in this project;  the schematic and layout were
+done by hand, including both the power-on-reset block and the power and
+signal routing to the pins on the wrapper.
+
+The power-on-reset circuit itself is simple and is not compensated for
+temperature or voltage variation.  When the power supply reaches a
+sufficient level, the voltage divider sets the gate voltage on an nFET
+device to draw a current of nominally 240nA.  The testbench
+"threshold_test_tb.spice" does a DC sweep to find the gate voltage that
+produces this value.   Next, a cascaded current mirror divides down the
+current by a factor of (roughly) 400.  The testbench current_test.spice
+checks the current division value.  Finally, the output ~600pA from the
+end of the current mirror is accumulated on a capacitor until the value
+trips the input of the 3.3V Schmitt trigger buffer from the
+sky130_fd_sd_hvl library.  The capacitor is sized to peg the nominal
+time to trigger at 15ms.  The schematic "example_por_tb.sch" sets up
+the testbench for this timing test.
+
+The output of the Schmitt trigger buffer becomes the high-voltage
+output, and is input to a standard buffer and inverter used as
+level shifters from the 3.3V domain to the 1.8V domain, producing
+complementary low-voltage outputs.
+
+The user project is formed from two power-on-reset circuits, one of
+which is connected to the user area VDDA1 power supply, and the other
+of which is connected to one of the analog I/O pads, used as a power
+supply input and connected to its voltage ESD clamp circuit.  The
+3.3V domain outputs are connected directly to GPIO pads through the
+ESD (150 ohm series) connection.  The 1.8V domain outputs are connected
+to GPIO pads through the usual I/O connections, with the corresponding
+user output enable (sense inverted) held low to keep the output always
+active.
+
+The C code testbench is in "verilog/dv/mprj_por/mprj_por.c" and only
+sets the GPIO pins used to the correct state (user output function).
+The POR circuit outputs are monitored by the testbench verilog file
+"mprj_por_tb.v" which will fail if the connections are wrong or if
+the behavioral POR verilog does not work as intended.
+
+Note that to properly test this circuit, the GPIO pins have to be
+configured for output to be seen and measured, implying that the
+management SoC power supply must be stable and the C program running
+off of the SPI flash before the user area power supplies are raised.
 
 
 Running Open-MPW Precheck Locally
