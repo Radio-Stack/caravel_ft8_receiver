@@ -144,7 +144,7 @@ First, you will need to install the simulation environment, by
 
 This will pull a docker image with the needed tools installed.
 
-To install the simulation environment locally, refer to <https://github.com/efabless/caravel_user_project_analog/blob/main/verilog/dv/README.md>`__
+To install the simulation environment locally, refer to `README <https://github.com/efabless/caravel_user_project_analog/blob/main/verilog/dv/README.md>`__
 
 Then, run the RTL and GL simulation by
 
