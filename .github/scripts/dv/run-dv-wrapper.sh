@@ -32,8 +32,8 @@ fi
 
 cd ..
 
-export PDK_PATH=$(pwd)/pdks/sky130A
-if [ ! -d $PDK_PATH ] 
+export PDK_ROOT=$(pwd)/pdks
+if [ ! -d $PDK_ROOT ] 
 then
     echo "Directory /path/to/dir DOES NOT exists." 
     exit 9999 
