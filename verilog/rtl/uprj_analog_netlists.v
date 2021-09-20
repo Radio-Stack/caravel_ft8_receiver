@@ -29,8 +29,9 @@
 
 `ifdef GL
     `default_nettype wire
-    `include "gl/user_analog_project_wrapper.v"
-    `include "gl/user_analog_proj_example.v"
+    // Use behavorial model with gate-level simulation
+    `include "rtl/user_analog_project_wrapper.v"
+    `include "rtl/user_analog_proj_example.v"
 `else
     `include "user_analog_project_wrapper.v"
     `include "user_analog_proj_example.v"
