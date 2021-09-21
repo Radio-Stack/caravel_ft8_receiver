@@ -242,6 +242,13 @@ configured for output to be seen and measured, implying that the
 management SoC power supply must be stable and the C program running
 off of the SPI flash before the user area power supplies are raised.
 
+**NOTE**
+
+   When running spice extraction on the user_analog_project_wrapper layout, it is recommended to use `ext2spice short resistor`. 
+   This is to preserve all the different port names in the extracted netlist. In case you have two ports that are electrically shorted
+   in the layout, the `short resistor` option will tell magic not to merge the two shorted ports instead it adds zero-ohm ideal resistors 
+   between the net names so that they can be kept as separate nets. 
+   
 
 Running Open-MPW Precheck Locally
 =================================
