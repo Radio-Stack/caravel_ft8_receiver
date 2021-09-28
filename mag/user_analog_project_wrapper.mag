@@ -794,6 +794,12 @@ rect 573556 455628 576731 455740
 rect 13991 191430 17427 196230
 rect 573605 191430 576629 196230
 << metal4 >>
+rect 329294 702300 334294 704800
+rect 318994 702300 323994 704800
+rect 227594 702300 232594 704800
+rect 217294 702300 222294 704800
+rect 175894 702300 180894 704800
+rect 165594 702300 170594 704800
 rect 170628 690636 526162 690737
 rect 170628 690603 222594 690636
 rect 170628 684327 170894 690603
@@ -914,6 +920,12 @@ rect 352028 615249 353603 617829
 rect 363412 615255 364987 617835
 rect 363414 597231 364992 601572
 << metal5 >>
+rect 329294 702300 334294 704800
+rect 318994 702300 323994 704800
+rect 227594 702300 232594 704800
+rect 217294 702300 222294 704800
+rect 175894 702300 180894 704800
+rect 165594 702300 170594 704800
 rect 357521 649837 359350 649991
 rect 357521 643394 357559 649837
 rect 359314 643394 359350 649837
@@ -1024,9 +1036,21 @@ flabel metal3 s 413394 702300 418394 704800 0 FreeSans 1920 180 0 0 io_analog[3]
 port 40 nsew signal bidirectional
 flabel metal3 s 329294 702300 334294 704800 0 FreeSans 1920 180 0 0 io_analog[4]
 port 41 nsew signal bidirectional
+flabel metal4 s 329294 702300 334294 704800 0 FreeSans 1920 180 0 0 io_analog[4]
+port 41 nsew signal bidirectional
+flabel metal5 s 329294 702300 334294 704800 0 FreeSans 1920 180 0 0 io_analog[4]
+port 41 nsew signal bidirectional
 flabel metal3 s 227594 702300 232594 704800 0 FreeSans 1920 180 0 0 io_analog[5]
 port 42 nsew signal bidirectional
+flabel metal4 s 227594 702300 232594 704800 0 FreeSans 1920 180 0 0 io_analog[5]
+port 42 nsew signal bidirectional
+flabel metal5 s 227594 702300 232594 704800 0 FreeSans 1920 180 0 0 io_analog[5]
+port 42 nsew signal bidirectional
 flabel metal3 s 175894 702300 180894 704800 0 FreeSans 1920 180 0 0 io_analog[6]
+port 43 nsew signal bidirectional
+flabel metal4 s 175894 702300 180894 704800 0 FreeSans 1920 180 0 0 io_analog[6]
+port 43 nsew signal bidirectional
+flabel metal5 s 175894 702300 180894 704800 0 FreeSans 1920 180 0 0 io_analog[6]
 port 43 nsew signal bidirectional
 flabel metal3 s 120194 702300 125194 704800 0 FreeSans 1920 180 0 0 io_analog[7]
 port 44 nsew signal bidirectional
@@ -1036,9 +1060,21 @@ flabel metal3 s 16194 702300 21194 704800 0 FreeSans 1920 180 0 0 io_analog[9]
 port 46 nsew signal bidirectional
 flabel metal3 s 318994 702300 323994 704800 0 FreeSans 1920 180 0 0 io_analog[4]
 port 47 nsew signal bidirectional
+flabel metal4 s 318994 702300 323994 704800 0 FreeSans 1920 180 0 0 io_analog[4]
+port 47 nsew signal bidirectional
+flabel metal5 s 318994 702300 323994 704800 0 FreeSans 1920 180 0 0 io_analog[4]
+port 47 nsew signal bidirectional
 flabel metal3 s 217294 702300 222294 704800 0 FreeSans 1920 180 0 0 io_analog[5]
 port 48 nsew signal bidirectional
+flabel metal4 s 217294 702300 222294 704800 0 FreeSans 1920 180 0 0 io_analog[5]
+port 48 nsew signal bidirectional
+flabel metal5 s 217294 702300 222294 704800 0 FreeSans 1920 180 0 0 io_analog[5]
+port 48 nsew signal bidirectional
 flabel metal3 s 165594 702300 170594 704800 0 FreeSans 1920 180 0 0 io_analog[6]
+port 49 nsew signal bidirectional
+flabel metal4 s 165594 702300 170594 704800 0 FreeSans 1920 180 0 0 io_analog[6]
+port 49 nsew signal bidirectional
+flabel metal5 s 165594 702300 170594 704800 0 FreeSans 1920 180 0 0 io_analog[6]
 port 49 nsew signal bidirectional
 flabel metal3 s 326794 702300 328994 704800 0 FreeSans 1920 180 0 0 io_clamp_high[0]
 port 50 nsew signal bidirectional
