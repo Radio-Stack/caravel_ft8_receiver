@@ -37,7 +37,7 @@ N 410 50 490 50 { lab=io_clamp_low[2:0]}
 N 490 50 490 160 { lab=GND}
 N 490 160 500 160 { lab=GND}
 N 300 -50 620 -50 { lab=io_oeb[26:0]}
-N 300 -70 480 -70 { lab=io_out[26:0]}
+N 470 40 650 40 { lab=io_clamp_high[2:1]}
 N 520 -150 520 -60 { lab=io_oeb[16:15]}
 N 610 -150 610 -60 { lab=io_oeb[12:11]}
 N 850 -0 850 40 { lab=io_analog[4]}
@@ -54,24 +54,25 @@ N 290 -150 390 -150 { lab=#net8}
 N 290 -130 390 -130 { lab=#net9}
 N 290 -110 390 -110 { lab=#net10}
 N 300 -90 400 -90 { lab=#net11}
-N 300 -30 400 -30 { lab=#net12}
-N 300 -10 400 -10 { lab=#net13}
-N 300 70 400 70 { lab=#net14}
-N -60 -290 -0 -290 { lab=#net15}
-N -60 -270 0 -270 { lab=#net16}
-N -60 -250 0 -250 { lab=#net17}
-N -60 -230 0 -230 { lab=#net18}
-N -60 -210 0 -210 { lab=#net19}
-N -60 -210 0 -210 { lab=#net19}
-N -60 -190 0 -190 { lab=#net20}
-N -60 -190 0 -190 { lab=#net20}
-N -60 -170 0 -170 { lab=#net21}
-N -60 -150 0 -150 { lab=#net22}
-N -60 -130 0 -130 { lab=#net23}
-N -60 -110 0 -110 { lab=#net24}
-N -60 -90 0 -90 { lab=#net25}
-N -60 -70 0 -70 { lab=#net26}
-N -60 -50 0 -50 { lab=#net27}
+N 300 -10 400 -10 { lab=#net12}
+N 300 70 400 70 { lab=#net13}
+N -60 -290 -0 -290 { lab=#net14}
+N -60 -270 0 -270 { lab=#net15}
+N -60 -250 0 -250 { lab=#net16}
+N -60 -230 0 -230 { lab=#net17}
+N -60 -210 0 -210 { lab=#net18}
+N -60 -210 0 -210 { lab=#net18}
+N -60 -190 0 -190 { lab=#net19}
+N -60 -190 0 -190 { lab=#net19}
+N -60 -170 0 -170 { lab=#net20}
+N -60 -150 0 -150 { lab=#net21}
+N -60 -130 0 -130 { lab=#net22}
+N -60 -110 0 -110 { lab=#net23}
+N -60 -90 0 -90 { lab=#net24}
+N -60 -70 0 -70 { lab=#net25}
+N -60 -50 0 -50 { lab=#net26}
+N 300 -30 550 -30 { lab=#net27}
+N 300 -70 450 -70 {}
 C {user_analog_project_wrapper.sym} 150 -110 0 0 {name=x1}
 C {devices/vsource.sym} 590 -220 0 0 {name=V1 value="PWL(0.0 0 400u 0 5.4m 3.3)"}
 C {devices/vsource.sym} 690 -220 0 0 {name=V2 value="PWL(0.0 0 300u 0 5.3 1.8)"}
@@ -94,6 +95,7 @@ C {devices/code_shown.sym} 1100 -130 0 0 {name=s1
 only_toplevel=false
 value=".control
 tran 10u 20m
-plot V(io_out[11]) V(io_out[12]) V(io_out[15]) V(io_out[16])
-+ V(gpio_analog[3]) V(gpio_analog[7])
+plot V(\\"io_out[11]\\") V(\\"io_out[12]\\") V(\\"io_out[15]\\") V(\\"io_out[16]\\")
++ V(\\"gpio_analog[3]\\") V(\\"gpio_analog[7]\\")
 .endc"}
+C {devices/lab_pin.sym} 550 -30 0 0 {name=l10 sig_type=std_logic lab=gpio_analog[17:0]}
