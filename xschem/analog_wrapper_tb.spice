@@ -64,10 +64,9 @@ V1 net1 GND PWL(0.0 0 400u 0 5.4m 3.3)
 V2 net2 GND PWL(0.0 0 300u 0 5.3 1.8)
 V3 io_analog[4] GND PWL(0.0 0 100u 0 5m 3.3)
 **** begin user architecture code
-
-.param mc_mm_switch=0
 .lib /usr/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 .include /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+
 .control
 tran 10u 20m
 plot V(io_out[11]) V(io_out[12]) V(io_out[15]) V(io_out[16])  V(gpio_analog[3]) V(gpio_analog[7])
@@ -232,14 +231,14 @@ XM1 net3 net7 net5 vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 L=0.8 W=2 nf=1 ad='int((n
 XM2 net2 net3 vss vss sky130_fd_pr__nfet_g5v0d10v5 L=0.8 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=1 m=1 
-XR1 net4 vdd3v3 vss sky130_fd_pr__res_xhigh_po_0p69 W=0.69 L=500 mult=1 m=1
+XR1 net4 vdd3v3 vss sky130_fd_pr__res_xhigh_po_0p69 L=500 mult=1 m=1
 XM4 net5 net6 vdd3v3 vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 L=0.8 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
 XM5 net3 net3 vss vss sky130_fd_pr__nfet_g5v0d10v5 L=0.8 W=14 nf=7 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=1 m=1 
-XR2 vss net4 vss sky130_fd_pr__res_xhigh_po_0p69 W=0.69 L=150 mult=1 m=1
+XR2 vss net4 vss sky130_fd_pr__res_xhigh_po_0p69 L=150 mult=1 m=1
 XM7 net2 net2 net1 vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 L=0.8 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
@@ -261,7 +260,7 @@ XM12 net8 net1 vdd3v3 vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 L=0.8 W=2 nf=1 ad='int
 XM13 net9 net2 net8 vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 L=0.8 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
-XR3 vss vss vss sky130_fd_pr__res_xhigh_po_0p69 W=0.69 L=25 mult=2 m=2
+XR3 vss vss vss sky130_fd_pr__res_xhigh_po_0p69 L=25 mult=2 m=2
 x2 net10 vss vss vdd3v3 vdd3v3 porb_h sky130_fd_sc_hvl__buf_8
 x3 net10 vss vss vdd1v8 vdd1v8 porb_l sky130_fd_sc_hvl__buf_8
 x4 net10 vss vss vdd1v8 vdd1v8 por_l sky130_fd_sc_hvl__inv_8

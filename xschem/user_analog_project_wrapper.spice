@@ -1,4 +1,4 @@
-**.subckt user_analog_project_wrapper vdda1 vdda2 vssa1 vssa1 vccd1 vccd2 vssd1 vssd2 wb_clk_i
+**.subckt user_analog_project_wrapper vdda1 vdda2 vssa1 vssa2 vccd1 vccd2 vssd1 vssd2 wb_clk_i
 *+ wb_rst_i wbs_stb_i wbs_cyc_i wbs_we_i wbs_sel_i[3],wbs_sel_i[2],wbs_sel_i[1],wbs_sel_i[0]
 *+ wbs_dat_i[31],wbs_dat_i[30],wbs_dat_i[29],wbs_dat_i[28],wbs_dat_i[27],wbs_dat_i[26],wbs_dat_i[25],wbs_dat_i[24],wbs_dat_i[23],wbs_dat_i[22],wbs_dat_i[21],wbs_dat_i[20],wbs_dat_i[19],wbs_dat_i[18],wbs_dat_i[17],wbs_dat_i[16],wbs_dat_i[15],wbs_dat_i[14],wbs_dat_i[13],wbs_dat_i[12],wbs_dat_i[11],wbs_dat_i[10],wbs_dat_i[9],wbs_dat_i[8],wbs_dat_i[7],wbs_dat_i[6],wbs_dat_i[5],wbs_dat_i[4],wbs_dat_i[3],wbs_dat_i[2],wbs_dat_i[1],wbs_dat_i[0]
 *+ wbs_adr_i[31],wbs_adr_i[30],wbs_adr_i[29],wbs_adr_i[28],wbs_adr_i[27],wbs_adr_i[26],wbs_adr_i[25],wbs_adr_i[24],wbs_adr_i[23],wbs_adr_i[22],wbs_adr_i[21],wbs_adr_i[20],wbs_adr_i[19],wbs_adr_i[18],wbs_adr_i[17],wbs_adr_i[16],wbs_adr_i[15],wbs_adr_i[14],wbs_adr_i[13],wbs_adr_i[12],wbs_adr_i[11],wbs_adr_i[10],wbs_adr_i[9],wbs_adr_i[8],wbs_adr_i[7],wbs_adr_i[6],wbs_adr_i[5],wbs_adr_i[4],wbs_adr_i[3],wbs_adr_i[2],wbs_adr_i[1],wbs_adr_i[0] wbs_ack_o
@@ -17,7 +17,7 @@
 *.iopin vdda1
 *.iopin vdda2
 *.iopin vssa1
-*.iopin vssa1
+*.iopin vssa2
 *.iopin vccd1
 *.iopin vccd2
 *.iopin vssd1

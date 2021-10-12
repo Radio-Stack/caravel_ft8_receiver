@@ -25,13 +25,18 @@
 # /home/schippes/share/doc/xschem/pcb
 # /home/schippes/share/doc/xschem/rom8k
 
+#### Allow user environment to override the path to the PDK
+if {[catch {set PDKPATH $env(PDKPATH)}]} {
+    set PDKPATH "/usr/share/pdk/sky130A"
+}
 #### Flush any previous definition
 set XSCHEM_LIBRARY_PATH {}
 #### include devices/*.sym
 append XSCHEM_LIBRARY_PATH ${XSCHEM_SHAREDIR}/xschem_library
 #### include skywater libraries. Here i use [pwd]. This works if i start xschem from here.
 append XSCHEM_LIBRARY_PATH :$env(PWD)
-append XSCHEM_LIBRARY_PATH :/usr/share/pdk/sky130A/libs.tech/xschem
+append XSCHEM_LIBRARY_PATH :$PDKPATH/libs.tech/xschem
+# append XSCHEM_LIBRARY_PATH :/mnt/sda7/home/schippes/pdks/sky130A/libs.tech/xschem
 #### add ~/.xschem/xschem_library (USER_CONF_DIR is normally ~/.xschem)
 append XSCHEM_LIBRARY_PATH :$USER_CONF_DIR/xschem_library 
 
@@ -135,6 +140,8 @@ set netlist_dir .
 #### and dest file as arguments, example: ps2pdf plot.ps plot.pdf)
 #### default: ps2pdf
 # set to_pdf ps2pdf
+set to_pdf {ps2pdf -dAutoRotatePages=/None}
+
 
 ###########################################################################
 #### CUSTOM GRID / SNAP VALUE SETTINGS
@@ -246,6 +253,14 @@ set netlist_dir .
 # set xschem_listen_port 2021
 
 ###########################################################################
+#### BESPICE WAVE SOCKET CONNECTION
+###########################################################################
+#### set bespice wave listening port; default: not enabled
+set bespice_listen_port 2022
+
+
+
+###########################################################################
 #### UTILE SPICE STIMULI DESCRIPTION LANGUAGE AND TRANSLATOR
 ###########################################################################
 #### default paths are set as shown here: 
@@ -258,7 +273,7 @@ set netlist_dir .
 #### list of tcl files to preload.
 # lappend tcl_files ${XSCHEM_SHAREDIR}/change_index.tcl
 lappend tcl_files ${XSCHEM_SHAREDIR}/ngspice_backannotate.tcl
-lappend tcl_files /usr/share/pdk/sky130A/libs.tech/xschem/scripts/sky130_models.tcl
+lappend tcl_files $PDKPATH/libs.tech/xschem/scripts/sky130_models.tcl
 ###########################################################################
 #### XSCHEM TOOLBAR
 ###########################################################################
@@ -269,5 +284,13 @@ lappend tcl_files /usr/share/pdk/sky130A/libs.tech/xschem/scripts/sky130_models.
 ###########################################################################
 #### SKYWATER PDK SPECIFIC VARIABLES
 ###########################################################################
-set SKYWATER_MODELS ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest
-set SKYWATER_STDCELLS ~/skywater-pdk/libraries/sky130_fd_sc_hd/latest
+
+## (spice patched) skywater-pdk install
+# set SKYWATER_MODELS ~/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest
+# set SKYWATER_STDCELLS ~/skywater-pdk/libraries/sky130_fd_sc_hd/latest
+
+## opencircuitdesign pdks install. You need to change these to point to your open_pdks installation
+# set SKYWATER_MODELS /usr/local/share/pdk/sky130A/libs.tech/ngspice
+# set SKYWATER_STDCELLS /usr/local/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/spice
+set SKYWATER_MODELS $PDKPATH/libs.tech/ngspice
+set SKYWATER_STDCELLS $PDKPATH/libs.ref/sky130_fd_sc_hd/spice
