@@ -318,6 +318,8 @@ Checklist for Open-MPW Submission
 
 |:heavy_check_mark:| Full Chip Simulation passes for RTL and GL (gate-level)
 
+|:heavy_check_mark:| The project contains a spice netlist for the ``user_analog_project_wrapper`` at netgen/user_analog_project_wrapper.spice
+
 |:heavy_check_mark:| The hardened Macros are LVS and DRC clean
 
 |:heavy_check_mark:| The ``user_analog_project_wrapper`` adheres to empty wrapper template  order specified at  `user_analog_project_wrapper_empty <https://github.com/efabless/caravel/blob/master/mag/user_analog_project_wrapper_empty.mag>`__
