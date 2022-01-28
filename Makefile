@@ -24,11 +24,11 @@ CARAVEL_LITE?=1
 ifeq ($(CARAVEL_LITE),1) 
 	CARAVEL_NAME := caravel-lite
 	CARAVEL_REPO := https://github.com/efabless/caravel-lite
-	CARVEL_TAG := 'rc-8'
+	CARAVEL_TAG := 'mpw-5'
 else
 	CARAVEL_NAME := caravel
 	CARAVEL_REPO := https://github.com/efabless/caravel
-	CARVEL_TAG := 'rc-8'
+	CARAVEL_TAG := 'mpw-5'
 endif
 
 # Include Caravel Makefile Targets
@@ -70,7 +70,7 @@ $(BLOCKS): %:
 .PHONY: install
 install:
 	@echo "Installing $(CARAVEL_NAME).."
-	@git clone -b $(CARVEL_TAG) $(CARAVEL_REPO) $(CARAVEL_ROOT)
+	@git clone -b $(CARAVEL_TAG) $(CARAVEL_REPO) $(CARAVEL_ROOT)
 
 # Create symbolic links to caravel's main files
 .PHONY: simlink
@@ -84,7 +84,7 @@ simlink: check-caravel
 # Update Caravel
 .PHONY: update_caravel
 update_caravel: check-caravel
-	cd $(CARAVEL_ROOT)/ && git checkout $(CARVEL_TAG) && git pull
+	cd $(CARAVEL_ROOT)/ && git checkout $(CARAVEL_TAG) && git pull
 
 # Uninstall Caravel
 .PHONY: uninstall
@@ -100,15 +100,15 @@ openlane:
 # Default installs to the user home directory, override by "export PRECHECK_ROOT=<precheck-installation-path>"
 .PHONY: precheck
 precheck:
-	@git clone https://github.com/efabless/mpw_precheck.git --depth=1 $(PRECHECK_ROOT)
+	@git clone --depth=1 --branch mpw-5 https://github.com/efabless/mpw_precheck.git $(PRECHECK_ROOT)
 	@docker pull efabless/mpw_precheck:latest
 
 .PHONY: run-precheck
 run-precheck: check-precheck check-pdk check-caravel
 	$(eval INPUT_DIRECTORY := $(shell pwd))
 	cd $(PRECHECK_ROOT) && \
-	docker run -e INPUT_DIRECTORY=$(INPUT_DIRECTORY) -e PDK_ROOT=$(PDK_ROOT) -e CARAVEL_ROOT=$(CARAVEL_ROOT) -v $(PRECHECK_ROOT):$(PRECHECK_ROOT) -v $(INPUT_DIRECTORY):$(INPUT_DIRECTORY) -v $(PDK_ROOT):$(PDK_ROOT) -v $(CARAVEL_ROOT):$(CARAVEL_ROOT) \
-	-u $(shell id -u $(USER)):$(shell id -g $(USER)) efabless/mpw_precheck:latest bash -c "cd $(PRECHECK_ROOT) ; python3 mpw_precheck.py --pdk_root $(PDK_ROOT) --input_directory $(INPUT_DIRECTORY) --caravel_root $(CARAVEL_ROOT)"
+	docker run -e INPUT_DIRECTORY=$(INPUT_DIRECTORY) -e PDK_ROOT=$(PDK_ROOT) -v $(PRECHECK_ROOT):$(PRECHECK_ROOT) -v $(INPUT_DIRECTORY):$(INPUT_DIRECTORY) -v $(PDK_ROOT):$(PDK_ROOT) \
+	-u $(shell id -u $(USER)):$(shell id -g $(USER)) efabless/mpw_precheck:latest bash -c "cd $(PRECHECK_ROOT) ; python3 mpw_precheck.py --pdk_root $(PDK_ROOT) --input_directory $(INPUT_DIRECTORY)"
 
 # Install PDK using OL's Docker Image
 .PHONY: pdk-nonnative
