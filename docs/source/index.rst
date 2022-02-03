@@ -128,7 +128,7 @@ power supply to the circuit.
 Building the PDK 
 ================
 
-Make sure you have `Magic VLSI Layout Tool <http://opencircuitdesign.com/magic/index.html>`__   `version 8.3.265 <https://github.com/RTimothyEdwards/magic/tree/8.3.160>`__ installed on your machine before building the pdk. 
+Make sure you have `Magic VLSI Layout Tool <http://opencircuitdesign.com/magic/index.html>`__   `version 8.3.265 <https://github.com/RTimothyEdwards/magic/tree/8.3.265>`__ installed on your machine before building the pdk. 
 
 .. code:: bash
 
