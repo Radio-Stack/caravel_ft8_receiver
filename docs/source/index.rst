@@ -128,11 +128,7 @@ power supply to the circuit.
 Building the PDK 
 ================
 
-You have two options for building the pdk: 
-
-- Build the pdk natively. 
-
-Make sure you have `Magic VLSI Layout Tool <http://opencircuitdesign.com/magic/index.html>`__   `version 8.3.160 <https://github.com/RTimothyEdwards/magic/tree/8.3.160>`__ installed on your machine before building the pdk. 
+Make sure you have `Magic VLSI Layout Tool <http://opencircuitdesign.com/magic/index.html>`__   `version 8.3.265 <https://github.com/RTimothyEdwards/magic/tree/8.3.265>`__ installed on your machine before building the pdk. 
 
 .. code:: bash
 
@@ -145,18 +141,7 @@ Make sure you have `Magic VLSI Layout Tool <http://opencircuitdesign.com/magic/i
 
     make pdk
 
-- Build the pdk using openlane's docker image which has magic installed. 
 
-.. code:: bash
-
-    # set PDK_ROOT to the path you wish to use for the pdk
-    export PDK_ROOT=<pdk-installation-path>
-
-    # you can optionally specify skywater-pdk and open-pdks commit used
-    # by setting and exporting SKYWATER_COMMIT and OPEN_PDKS_COMMIT
-    # if you do not set them, they default to the last verfied commits tested for this project
-
-    make pdk-nonnative
 
 Running Full Chip Simulation
 ============================
