@@ -24,36 +24,32 @@ DV_TEST_IDS=(${IDS//,/ })
 export TARGET_PATH=$(pwd)
 export CARAVEL_ROOT=$(pwd)/caravel
 
-if [ ! -d $TARGET_PATH ] 
-then
-    echo "Directory /path/to/dir DOES NOT exists." 
-    exit 9999 
+if [ ! -d $TARGET_PATH ]; then
+    echo "Directory /path/to/dir DOES NOT exists."
+    exit 9999
 fi
 
 cd ..
 
 export PDK_ROOT=$(pwd)/pdks
-if [ ! -d $PDK_ROOT ] 
-then
-    echo "Directory /path/to/dir DOES NOT exists." 
-    exit 9999 
-fi
-
-DV_PATH=$TARGET_PATH/verilog/dv
-if [ ! -d $DV_PATH ] 
-then
-    echo "Directory /path/to/dir DOES NOT exists." 
+if [ ! -d $PDK_ROOT ]; then
+    echo "Directory /path/to/dir DOES NOT exists."
     exit 9999
 fi
 
-for id in "${DV_TEST_IDS[@]}"
-do 
+DV_PATH=$TARGET_PATH/verilog/dv
+if [ ! -d $DV_PATH ]; then
+    echo "Directory /path/to/dir DOES NOT exists."
+    exit 9999
+fi
+
+for id in "${DV_TEST_IDS[@]}"; do
     docker run -v $TARGET_PATH:$TARGET_PATH -v $PDK_ROOT:$PDK_ROOT \
-                -v $CARAVEL_ROOT:$CARAVEL_ROOT \
-                -e TARGET_PATH=$TARGET_PATH -e PDK_ROOT=$PDK_ROOT \
-                -e CARAVEL_ROOT=$CARAVEL_ROOT \
-                -u $(id -u $USER):$(id -g $USER) efabless/dv_setup:latest \
-                bash -c "bash $TARGET_PATH/.github/scripts/dv/run-dv.sh $PDK_ROOT $DV_PATH $id $SIM_MODE"
+    -v $CARAVEL_ROOT:$CARAVEL_ROOT \
+    -e TARGET_PATH=$TARGET_PATH -e PDK_ROOT=$PDK_ROOT \
+    -e CARAVEL_ROOT=$CARAVEL_ROOT \
+    -u $(id -u $USER):$(id -g $USER) efabless/dv_setup:latest \
+    bash -c "bash $TARGET_PATH/.github/scripts/dv/run-dv.sh $PDK_ROOT $DV_PATH $id $SIM_MODE"
 
     echo "DONE!"
 
@@ -63,15 +59,15 @@ do
         cnt=$(grep "Pass" $VERDICT_FILE -s | wc -l)
         if ! [[ $cnt ]]; then cnt = 0; fi
     else
-        echo "DV check failed due to subscript failure. Please review the logs";
-        exit 2;
+        echo "DV check failed due to subscript failure. Please review the logs"
+        exit 2
     fi
 
     echo "Verdict: $cnt"
 
-    if [[ $cnt -ne 1 ]]; then 
-        exit 2; 
+    if [[ $cnt -ne 1 ]]; then
+        exit 2
     fi
 done
 
-exit 0;
+exit 0
