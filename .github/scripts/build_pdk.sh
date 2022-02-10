@@ -13,24 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # SPDX-License-Identifier: Apache-2.0
+git clone --depth=1 https://github.com/efabless/caravel-lite.git
 
-# By default build pdk since we don't need the other script for the main purpose
-export SKIP_PDK_BUILD=${1:-0}
+export HOME=$(pwd)
+cd ..
+export PDK_ROOT=$(pwd)/pdks && mkdir "$PDK_ROOT"
+cd "$HOME"/caravel-lite/ || exit
 
-export TARGET_PATH=$(pwd)
-git clone https://github.com/efabless/mpw_precheck.git
-
-docker pull efabless/mpw_precheck:latest
-
-
-if [ $SKIP_PDK_BUILD -eq 0 ]; then
-    cd $TARGET_PATH/..
-    export PDK_ROOT=$(pwd)/precheck_pdks
-    mkdir $PDK_ROOT
-    cd $TARGET_PATH/mpw_precheck/dependencies
-    sh build-pdk.sh
-    cd $TARGET_DIR
-
-fi
+make skywater-pdk skywater-library open_pdks build-pdk gen-sources
 
 exit 0

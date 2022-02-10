@@ -1,73 +1,75 @@
-name: Caravan Build
+# name: Caravan Build
 
+# on:
+#   # Runs on Every Push
+#   push:
+#   # Runs on Pull Requests
+#   pull_request:
+#   workflow_dispatch:
 
-on:
-    # Runs on Every Push
-    push:
-    # Runs on Pull Requests
-    pull_request:
-    workflow_dispatch:
+# jobs:
+#   make_truck:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
 
-jobs:
-  make_truck:
-    runs-on: ubuntu-latest
-    steps:
-       - uses: actions/checkout@v2
-      
-       - name: Set up QEMU
-         uses: docker/setup-qemu-action@v1
+#       - name: Set up QEMU
+#         uses: docker/setup-qemu-action@v1
 
-       - name: Set up Docker Buildx
-         uses: docker/setup-buildx-action@v1
-        
-       - name: Install The PDK
-         run:  bash ${GITHUB_WORKSPACE}/.github/scripts/dv/pdkBuild.sh
-         env: 
-          OPENLANE_TAG:  2021.09.16_03.28.21
+#       - name: Set up Docker Buildx
+#         uses: docker/setup-buildx-action@v1
 
-       - name: Run make truck
-         run: bash ${GITHUB_WORKSPACE}/.github/scripts/build/run-truck.sh 
-         env: 
-          OPENLANE_TAG:  2021.09.16_03.28.21
-          
-  set_user_id:
-    runs-on: ubuntu-latest
-    steps:
-       - uses: actions/checkout@v2
-      
-       - name: Set up QEMU
-         uses: docker/setup-qemu-action@v1
+#       - name: Install Magic
+#         run: bash ${GITHUB_WORKSPACE}/.github/scripts/install_magic.sh
 
-       - name: Set up Docker Buildx
-         uses: docker/setup-buildx-action@v1
-        
-       - name: Install The PDK
-         run:  bash ${GITHUB_WORKSPACE}/.github/scripts/dv/pdkBuild.sh
-         env: 
-          OPENLANE_TAG:  2021.09.16_03.28.21
+#       - name: Build PDK
+#         run: bash ${GITHUB_WORKSPACE}/.github/scripts/build_pdk.sh
 
-       - name: Run Set User ID
-         run: bash ${GITHUB_WORKSPACE}/.github/scripts/build/run-set-id.sh 
-         env: 
-          OPENLANE_TAG:  2021.09.16_03.28.21
+#       - name: Run make truck
+#         run: bash ${GITHUB_WORKSPACE}/.github/scripts/build/run-truck.sh
+#         env:
+#           OPENLANE_TAG: 2021.09.16_03.28.21
 
-  xor_wrapper:
-    runs-on: ubuntu-latest
-    steps:
-       - uses: actions/checkout@v2
-      
-       - name: Set up QEMU
-         uses: docker/setup-qemu-action@v1
+#   set_user_id:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
 
-       - name: Set up Docker Buildx
-         uses: docker/setup-buildx-action@v1
-        
-       - name: Install The PDK
-         run:  bash ${GITHUB_WORKSPACE}/.github/scripts/dv/pdkBuild.sh
-         env: 
-          OPENLANE_TAG:  2021.09.16_03.28.21
+#       - name: Set up QEMU
+#         uses: docker/setup-qemu-action@v1
 
-       - name: Run XOR Check
-         run: bash ${GITHUB_WORKSPACE}/.github/scripts/build/run-xor.sh 
-         env: 
-          OPENLANE_TAG:  2021.09.16_03.28.21
+#       - name: Set up Docker Buildx
+#         uses: docker/setup-buildx-action@v1
+
+#       - name: Install Magic
+#         run: bash ${GITHUB_WORKSPACE}/.github/scripts/install_magic.sh
+
+#       - name: Build PDK
+#         run: bash ${GITHUB_WORKSPACE}/.github/scripts/build_pdk.sh
+
+#       - name: Run Set User ID
+#         run: bash ${GITHUB_WORKSPACE}/.github/scripts/build/run-set-id.sh
+#         env:
+#           OPENLANE_TAG: 2021.09.16_03.28.21
+
+#   xor_wrapper:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+
+#       - name: Set up QEMU
+#         uses: docker/setup-qemu-action@v1
+
+#       - name: Set up Docker Buildx
+#         uses: docker/setup-buildx-action@v1
+
+#       - name: Install Magic
+#         run: bash ${GITHUB_WORKSPACE}/.github/scripts/install_magic.sh
+
+#       - name: Build PDK
+#         run: bash ${GITHUB_WORKSPACE}/.github/scripts/build_pdk.sh
+
+#       - name: Run XOR Check
+#         run: bash ${GITHUB_WORKSPACE}/.github/scripts/build/run-xor.sh
+#         env:
+#           OPENLANE_TAG: 2021.09.16_03.28.21
