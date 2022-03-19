@@ -21,14 +21,16 @@ SIM ?= RTL
 # Install lite version of caravel, (1): caravel-lite, (0): caravel
 CARAVEL_LITE?=1
 
-ifeq ($(CARAVEL_LITE),1) 
+MPW_TAG ?= mpw-5c
+
+ifeq ($(CARAVEL_LITE),1)
 	CARAVEL_NAME := caravel-lite
 	CARAVEL_REPO := https://github.com/efabless/caravel-lite
-	CARAVEL_TAG := 'mpw-5a'
+	CARAVEL_TAG := $(MPW_TAG)
 else
 	CARAVEL_NAME := caravel
 	CARAVEL_REPO := https://github.com/efabless/caravel
-	CARAVEL_TAG := 'mpw-5a'
+	CARAVEL_TAG := $(MPW_TAG)
 endif
 
 # Include Caravel Makefile Targets
@@ -100,7 +102,7 @@ openlane:
 # Default installs to the user home directory, override by "export PRECHECK_ROOT=<precheck-installation-path>"
 .PHONY: precheck
 precheck:
-	@git clone --depth=1 --branch mpw-5a https://github.com/efabless/mpw_precheck.git $(PRECHECK_ROOT)
+	@git clone --depth=1 --branch $(MPW_TAG) https://github.com/efabless/mpw_precheck.git $(PRECHECK_ROOT)
 	@docker pull efabless/mpw_precheck:latest
 
 .PHONY: run-precheck
