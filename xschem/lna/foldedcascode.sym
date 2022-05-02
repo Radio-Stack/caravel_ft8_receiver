@@ -1,0 +1,27 @@
+v {xschem version=3.0.0 file_version=1.2 }
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=XAMP1"}
+V {}
+S {}
+E {}
+L 4 180 -180 180 -80 {}
+L 4 180 -80 280 -130 {}
+L 4 180 -180 280 -130 {}
+L 4 280 -130 300 -130 {}
+L 4 160 -130 180 -130 {}
+L 4 240 -180 240 -150 {}
+L 4 240 -110 240 -80 {}
+L 4 220 -100 220 -80 {}
+B 5 157.5 -132.5 162.5 -127.5 {name=in
+dir=in}
+B 5 237.5 -82.5 242.5 -77.5 {name=gnd
+dir=in}
+B 5 297.5 -132.5 302.5 -127.5 {name=out
+dir=out}
+B 5 237.5 -182.5 242.5 -177.5 {name=vdd
+dir=in}
+B 5 217.5 -82.5 222.5 -77.5 {name=bias
+dir=in}
+T {@name} 260 -180 0 0 0.2 0.2 {}
