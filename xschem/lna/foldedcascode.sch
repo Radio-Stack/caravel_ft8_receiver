@@ -110,12 +110,12 @@ lab=gnd}
 N 910 -600 960 -600 {
 lab=gnd}
 N 820 -340 860 -340 {
-lab=in}
+lab=bias}
 N 860 -340 860 -320 {
-lab=in}
+lab=bias}
 N 860 -320 880 -320 {
-lab=in}
-C {code.sym} 80 -260 0 0 {name=sT_MODELS
+lab=bias}
+C {code.sym} 140 -690 0 0 {name=sT_MODELS
 only_toplevel=true
 format="tcleval( @value )"
 value="** manual skywater pdks install (with patches applied)
@@ -132,7 +132,7 @@ C {title-2.sym} 20 -40 0 0 {name=l1 author="Ryan Wans" rev=1.0}
 C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/nfet_01v8.sym} 440 -460 0 0 {name=M2
 L=0.15
 W=22
-nf=1 
+nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
