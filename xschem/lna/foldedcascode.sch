@@ -185,12 +185,6 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_xhigh_po.sym} 460 -610 0 1 {name=R7
-W=0.69
-L=0.35
-model=res_xhigh_po
-spiceprefix=X
-mult=1}
 C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_xhigh_po.sym} 460 -710 0 1 {name=R8
 W=0.69
 L=1.42
@@ -199,25 +193,31 @@ spiceprefix=X
 mult=1}
 C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_xhigh_po.sym} 790 -340 1 0 {name=R9
 W=0.35
-L=1.0
+L=1.9
 model=res_xhigh_po
 spiceprefix=X
 mult=1}
-C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/cap_mim_m3_1.sym} 940 -470 2 0 {name=C2 model=cap_mim_m3_1 W=12.2 L=12.2 MF=1 spiceprefix=X}
-C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_xhigh_po.sym} 820 -670 0 1 {name=R11
-W=0.69
-L=0.8
-model=res_xhigh_po
-spiceprefix=X
-mult=1}
-C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_xhigh_po.sym} 910 -580 1 0 {name=R12
-W=0.69
-L=0.4
-model=res_xhigh_po
-spiceprefix=X
-mult=1}
+C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/cap_mim_m3_1.sym} 940 -470 2 0 {name=C2 model=cap_mim_m3_1 W=12.5 L=12.5 MF=1 spiceprefix=X}
 C {opin.sym} 980 -400 0 0 {name=out lab=out}
 C {ipin.sym} 360 -780 0 0 {name=vdd lab=vdd}
 C {ipin.sym} 360 -280 0 0 {name=gnd lab=gnd}
 C {ipin.sym} 360 -460 0 0 {name=in lab=in}
 C {ipin.sym} 880 -320 2 0 {name=bias lab=bias}
+C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_high_po_0p35.sym} 460 -610 0 1 {name=R5
+W=0.35
+L=0.5
+model=res_high_po_0p35
+spiceprefix=X
+mult=1}
+C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_high_po_0p35.sym} 910 -580 3 1 {name=R7
+W=0.35
+L=0.5
+model=res_high_po_0p35
+spiceprefix=X
+mult=1}
+C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_high_po_0p35.sym} 820 -670 0 1 {name=R10
+W=0.35
+L=1.95
+model=res_high_po_0p35
+spiceprefix=X
+mult=1}
