@@ -64,14 +64,12 @@ Using the same circuit as before, sweep V2 instead of V1 at varying V1 values. T
 .saveall
 ```
 For a given DC sweep, one can obtain the $V_{DSAT}$ value by running `print @m.xm1.msky130_fd_pr__nfet_01v8[vdsat]`. Or, use the expression $V_{DSAT}=V_{GS}-V_{TH}$. Now that the key values of the device have been extracted, one can now determine some other Figures of Merit, such as on resistance:
-$$
-R_{on}=[\mu_{n}C_{OX}\frac{W}{L}(V_{GS}-V_{TH})]^{-1}
-$$
+$$R_{on} \ = \ [\mu_{n}C_{OX}\frac{W}{L}(V_{GS}-V_{TH})]^{-1}$$
 And to determine the behavior of drain current past saturation:
 $$
-\int_0^LI_D\mathrm dx=\mu_{n}C_{OX}\int_0^{V_{GS}-V_{TH}}[V_{GS}-V_{TH}-V(x)]\mathrm dV\tag*{(3)}
+\int_0^LI_D\mathrm dx \ = \ \mu_{n}C_{OX}\int_0^{V_{GS}-V_{TH}}[V_{GS}-V_{TH}-V(x)]\mathrm dV\tag*{(3)}
 $$
 
 $$
-\therefore I_D=\frac{1}{2}\mu_nC_{OX}\frac{W}{L}(V_{GS}-V_{TH})^2(1+\lambda V_{DS}) \ \ \ \ \mathrm{for} \ V_{DS}>V_{DSAT}
+\therefore I_D \ = \ \frac{1}{2}\mu_nC_{OX}\frac{W}{L}(V_{GS}-V_{TH})^2(1+\lambda V_{DS}) \ \ \ \ \mathrm{for} \ V_{DS}>V_{DSAT}
 $$
