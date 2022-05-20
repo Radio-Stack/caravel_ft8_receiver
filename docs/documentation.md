@@ -43,9 +43,7 @@ Start by placing a `sky130_fd_pr__nfet_01v8` device with the default parameter v
 .saveall
 ```
 Once the simulation has finished, run `plot -i(v2)` to view the drain current vs. $V_{GS}$ graph. This graph helps to give us the transconductance $g_m$ of the MOSFET, which indicates how efficiently the device can convert a voltage to a current. To derive this value from the simulation, you can either run the command `print @m.xm1.msky130_fd_pr__nfet_01v8[gm]` or use the typical analytical expression:
-$$
-g_{m} = \frac{\partial{I_D}}{\partial{}V_{GS}} = \mu_{n}C_{OX}\frac{W}{L}(V_{GS}-V_{TH}) = \frac{2I_D}{V_{GS}-V_{TH}}
-$$
+$$g_{m} = \frac{\partial{I_D}}{\partial{}V_{GS}} = \mu_{n}C_{OX}\frac{W}{L}(V_{GS}-V_{TH}) = \frac{2I_D}{V_{GS}-V_{TH}}$$
 
 To find the threshold voltage $V_{TH}$ of the device, you can simply run the same command as above for the parameter: `print @m.xm1.msky130_fd_pr__nfet_01v8[vth]`
 
@@ -75,5 +73,5 @@ $$
 $$
 
 $$
-\therefore I_D=\frac{1}{2}\mu_nC_{OX}\frac{W}{L}(V_{GS}-V_{TH})^2(1+\lambda V_{DS}) \ \ \ \ \mathrm{for} \ V_{DS}>V_{DSAT} \tag*{(4)}
+\therefore I_D=\frac{1}{2}\mu_nC_{OX}\frac{W}{L}(V_{GS}-V_{TH})^2(1+\lambda V_{DS}) \ \ \ \ \mathrm{for} \ V_{DS}>V_{DSAT}
 $$
