@@ -29,7 +29,7 @@ blahblah finish this
 blah
 
 ## 2. PDK Characterization
-Proper characterization of the PDK devices is paramount for accurate circuit design in future steps. Once values such as $g_m$ and $V_{TH}$ are obtained, processes like gm/Id design can be utilized to derive circuit topologies and values. 
+Proper characterization of the PDK devices is paramount for accurate circuit design in future steps. Once values such as $g_{m}$ and $V_{TH}$ are obtained, processes like gm/Id design can be utilized to derive circuit topologies and values. 
 
 ### Characterization of `nfet_01v8`
 
@@ -43,7 +43,9 @@ Start by placing a `sky130_fd_pr__nfet_01v8` device with the default parameter v
 .saveall
 ```
 Once the simulation has finished, run `plot -i(v2)` to view the drain current vs. $V_{GS}$ graph. This graph helps to give us the transconductance $g_m$ of the MOSFET, which indicates how efficiently the device can convert a voltage to a current. To derive this value from the simulation, you can either run the command `print @m.xm1.msky130_fd_pr__nfet_01v8[gm]` or use the typical analytical expression:
-$$g_{m} = \frac{\partial{I_D}}{\partial{}V_{GS}} = \mu_{n}C_{OX}\frac{W}{L}(V_{GS}-V_{TH}) = \frac{2I_D}{V_{GS}-V_{TH}} \tag*{(1)}$$
+$$
+g_{m} = \frac{\partial{I_D}}{\partial{}V_{GS}} = \mu_{n}C_{OX}\frac{W}{L}(V_{GS}-V_{TH}) = \frac{2I_D}{V_{GS}-V_{TH}}
+$$
 
 To find the threshold voltage $V_{TH}$ of the device, you can simply run the same command as above for the parameter: `print @m.xm1.msky130_fd_pr__nfet_01v8[vth]`
 
@@ -64,8 +66,14 @@ Using the same circuit as before, sweep V2 instead of V1 at varying V1 values. T
 .saveall
 ```
 For a given DC sweep, one can obtain the $V_{DSAT}$ value by running `print @m.xm1.msky130_fd_pr__nfet_01v8[vdsat]`. Or, use the expression $V_{DSAT}=V_{GS}-V_{TH}$. Now that the key values of the device have been extracted, one can now determine some other Figures of Merit, such as on resistance:
-$$R_{on}=[\mu_{n}C_{OX}\frac{W}{L}(V_{GS}-V_{TH})]^{-1} \tag*{(2)}$$
+$$
+R_{on}=[\mu_{n}C_{OX}\frac{W}{L}(V_{GS}-V_{TH})]^{-1}
+$$
 And to determine the behavior of drain current past saturation:
-$$\int_0^LI_D\mathrm dx=\mu_{n}C_{OX}\int_0^{V_{GS}-V_{TH}}[V_{GS}-V_{TH}-V(x)]\mathrm dV\tag*{(3)}$$
+$$
+\int_0^LI_D\mathrm dx=\mu_{n}C_{OX}\int_0^{V_{GS}-V_{TH}}[V_{GS}-V_{TH}-V(x)]\mathrm dV\tag*{(3)}
+$$
 
-$$\therefore I_D=\frac{1}{2}\mu_nC_{OX}\frac{W}{L}(V_{GS}-V_{TH})^2(1+\lambda V_{DS}) \ \ \ \ \mathrm{for} \ V_{DS}>V_{DSAT} \tag*{(4)}$$
+$$
+\therefore I_D=\frac{1}{2}\mu_nC_{OX}\frac{W}{L}(V_{GS}-V_{TH})^2(1+\lambda V_{DS}) \ \ \ \ \mathrm{for} \ V_{DS}>V_{DSAT} \tag*{(4)}
+$$
