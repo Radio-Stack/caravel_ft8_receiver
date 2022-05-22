@@ -119,6 +119,7 @@ N 940 -400 980 -400 {
 lab=out}
 N 740 -400 840 -400 {
 lab=#net4}
+N 840 -400 900 -400 {}
 C {code.sym} 140 -690 0 0 {name=sT_MODELS
 only_toplevel=true
 format="tcleval( @value )"
@@ -225,8 +226,3 @@ L=7
 model=res_high_po_0p35
 spiceprefix=X
 mult=1}
-C {ind.sym} 870 -400 3 0 {name=L1
-m=1
-value=1n
-footprint=1206
-device=inductor}
