@@ -52,13 +52,11 @@ lab=vdd}
 N 700 -460 740 -460 {
 lab=vdd}
 N 740 -430 740 -360 {
-lab=out}
-N 740 -400 980 -400 {
-lab=out}
+lab=#net4}
 N 740 -360 740 -340 {
-lab=out}
+lab=#net4}
 N 740 -340 760 -340 {
-lab=out}
+lab=#net4}
 N 790 -360 850 -360 {
 lab=gnd}
 N 850 -360 960 -360 {
@@ -82,15 +80,15 @@ lab=gnd}
 N 480 -610 480 -580 {
 lab=gnd}
 N 780 -460 820 -460 {
-lab=#net4}
+lab=#net5}
 N 820 -580 820 -460 {
-lab=#net4}
+lab=#net5}
 N 820 -780 820 -700 {
 lab=vdd}
 N 820 -640 820 -580 {
-lab=#net4}
+lab=#net5}
 N 820 -580 880 -580 {
-lab=#net4}
+lab=#net5}
 N 940 -580 1100 -580 {
 lab=gnd}
 N 1100 -570 1100 -280 {
@@ -115,6 +113,12 @@ N 860 -340 860 -320 {
 lab=bias}
 N 860 -320 880 -320 {
 lab=bias}
+N 900 -400 940 -400 {
+lab=out}
+N 940 -400 980 -400 {
+lab=out}
+N 740 -400 840 -400 {
+lab=#net4}
 C {code.sym} 140 -690 0 0 {name=sT_MODELS
 only_toplevel=true
 format="tcleval( @value )"
@@ -185,39 +189,44 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_xhigh_po.sym} 460 -710 0 1 {name=R8
-W=0.69
-L=1.42
-model=res_xhigh_po
-spiceprefix=X
-mult=1}
-C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_xhigh_po.sym} 790 -340 1 0 {name=R9
-W=0.35
-L=1.9
-model=res_xhigh_po
-spiceprefix=X
-mult=1}
-C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/cap_mim_m3_1.sym} 940 -470 2 0 {name=C2 model=cap_mim_m3_1 W=12.5 L=12.5 MF=1 spiceprefix=X}
+C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/cap_mim_m3_1.sym} 940 -470 2 0 {name=C2 model=cap_mim_m3_1 W=15 L=15 MF=1 spiceprefix=X}
 C {opin.sym} 980 -400 0 0 {name=out lab=out}
 C {ipin.sym} 360 -780 0 0 {name=vdd lab=vdd}
 C {ipin.sym} 360 -280 0 0 {name=gnd lab=gnd}
 C {ipin.sym} 360 -460 0 0 {name=in lab=in}
 C {ipin.sym} 880 -320 2 0 {name=bias lab=bias}
-C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_high_po_0p35.sym} 460 -610 0 1 {name=R5
+C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_xhigh_po.sym} 460 -710 0 1 {name=R5
 W=0.35
-L=0.5
+L=8
+model=res_xhigh_po
+spiceprefix=X
+mult=1}
+C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_high_po_0p35.sym} 460 -610 0 1 {name=R7
+W=0.35
+L=16
 model=res_high_po_0p35
 spiceprefix=X
 mult=1}
-C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_high_po_0p35.sym} 910 -580 3 1 {name=R7
+C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_high_po_0p35.sym} 910 -580 3 1 {name=R8
 W=0.35
-L=0.5
+L=5
 model=res_high_po_0p35
 spiceprefix=X
 mult=1}
-C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_high_po_0p35.sym} 820 -670 0 1 {name=R10
+C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_high_po_0p35.sym} 820 -670 0 1 {name=R9
 W=0.35
-L=1.95
+L=10
 model=res_high_po_0p35
 spiceprefix=X
 mult=1}
+C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_high_po_0p35.sym} 790 -340 3 1 {name=R10
+W=0.35
+L=7
+model=res_high_po_0p35
+spiceprefix=X
+mult=1}
+C {ind.sym} 870 -400 3 0 {name=L1
+m=1
+value=1n
+footprint=1206
+device=inductor}

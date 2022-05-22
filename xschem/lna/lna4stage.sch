@@ -90,8 +90,6 @@ N 270 -840 270 -800 {
 lab=#net8}
 N 170 -520 230 -520 {
 lab=#net10}
-N 270 -490 270 -340 {
-lab=GND}
 N 270 -520 370 -520 {
 lab=GND}
 N 370 -520 370 -340 {
@@ -101,8 +99,6 @@ lab=#net8}
 N 510 -520 550 -520 {
 lab=#net8}
 N 550 -490 550 -420 {
-lab=out1}
-N 550 -460 790 -460 {
 lab=out1}
 N 550 -420 550 -400 {
 lab=out1}
@@ -117,8 +113,6 @@ lab=GND}
 N 750 -500 750 -460 {
 lab=out1}
 N 750 -600 750 -560 {
-lab=GND}
-N 750 -600 870 -600 {
 lab=GND}
 N 870 -600 870 -340 {
 lab=GND}
@@ -160,13 +154,37 @@ N 720 -660 770 -660 {
 lab=GND}
 N 630 -400 670 -400 {
 lab=#net12}
-N 670 -400 670 -380 {
-lab=#net12}
-N 670 -380 690 -380 {
-lab=#net12}
 N 750 -380 750 -340 {
 lab=GND}
-N 720 -360 720 -340 {
+N 750 -400 750 -380 {
+lab=GND}
+N 730 -400 750 -400 {
+lab=GND}
+N 700 -460 750 -460 {
+lab=out1}
+N 750 -460 790 -460 {
+lab=out1}
+N 550 -460 640 -460 {
+lab=out1}
+N 640 -460 700 -460 {
+lab=out1}
+N 840 -600 870 -600 {
+lab=GND}
+N 750 -600 780 -600 {
+lab=GND}
+N 780 -600 840 -600 {
+lab=GND}
+N 660 -600 750 -600 {
+lab=GND}
+N 660 -600 660 -560 {
+lab=GND}
+N 660 -500 660 -460 {
+lab=out1}
+N 270 -380 270 -340 {
+lab=GND}
+N 270 -490 270 -440 {
+lab=GND}
+N 270 -440 270 -380 {
 lab=GND}
 C {/foss/designs/caravel_ft8_receiver/xschem/lna/foldedcascode.sym} -20 -30 0 0 {name=XAMP1}
 C {/foss/designs/caravel_ft8_receiver/xschem/lna/foldedcascode.sym} 160 -30 0 0 {name=XAMP2}
@@ -176,8 +194,10 @@ C {code.sym} -140 -250 0 0 {name=s1 only_toplevel=false value="
 .control
 	** dc V1 0.769 3.769 0.01
 	** dc V2 0 3 0.01
-        ** SIN(0.9 0.00001 70000000)
-	tran 0.0000000001 0.0000001
+        ** SIN(0.9 0.00001 700000000)
+	tran 0.0000000001 0.000001
+	** ac lin 500 1K 100MEG
+	** plot vdb(out1) xlog
 .endc
 .save all
 "}
@@ -195,7 +215,7 @@ value="** manual skywater pdks install (with patches applied)
 "
 spice_ignore=false}
 C {opin.sym} 860 -160 0 0 {name=out lab=out}
-C {vsource.sym} 80 -110 0 1 {name=V1 value="SIN(0.8 0.00005 70000000)"}
+C {vsource.sym} 80 -110 0 1 {name=V1 value="SIN(0.8 0.00005 7000000)"}
 C {vsource.sym} 110 -240 1 0 {name=V2 value=1.8}
 C {gnd.sym} 80 -240 1 0 {name=l1 lab=GND}
 C {gnd.sym} 80 -80 0 0 {name=l2 lab=GND}
@@ -258,14 +278,8 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_xhigh_po.sym} 270 -770 0 1 {name=R8
-W=0.69
-L=1.42
-model=res_xhigh_po
-spiceprefix=X
-mult=1}
-C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_xhigh_po.sym} 600 -400 1 0 {name=R9
 W=0.35
-L=1.9
+L=8
 model=res_xhigh_po
 spiceprefix=X
 mult=1}
@@ -273,54 +287,60 @@ C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/cap_mim_m3_1.sym} 750 -530 2 
 C {opin.sym} 790 -460 0 0 {name=out1 lab=out1}
 C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_high_po_0p35.sym} 270 -670 0 1 {name=R5
 W=0.35
-L=0.5
+L=16
 model=res_high_po_0p35
-spiceprefix=X
-mult=1}
-C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_xhigh_po.sym} 720 -380 3 0 {name=R6
-W=0.69
-L=0.75
-model=res_xhigh_po
 spiceprefix=X
 mult=1}
 C {vsource.sym} 140 -840 1 0 {name=V3 value=1.8}
 C {gnd.sym} 110 -840 1 0 {name=l4 lab=GND}
 C {gnd.sym} 170 -340 0 0 {name=l5 lab=GND}
-C {vsource.sym} 180 -490 0 1 {name=V4 value="SIN(0.8 0.00005 70000000)"}
+C {vsource.sym} 180 -490 0 1 {name=V4 value="dc 0.8 ac 0.00005"}
 C {gnd.sym} 180 -460 0 0 {name=l6 lab=GND}
 C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_high_po_0p35.sym} 720 -640 3 1 {name=R7
 W=0.35
-L=0.5
+L=5
 model=res_high_po_0p35
 spiceprefix=X
 mult=1}
 C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_high_po_0p35.sym} 630 -730 0 1 {name=R10
 W=0.35
-L=1.95
+L=10
 model=res_high_po_0p35
 spiceprefix=X
 mult=1}
-C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_xhigh_po.sym} 200 -80 2 0 {name=R1
-W=0.69
-L=0.75
-model=res_xhigh_po
+C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_high_po_0p35.sym} 600 -400 3 1 {name=R6
+W=0.35
+L=7
+model=res_high_po_0p35
 spiceprefix=X
 mult=1}
-C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_xhigh_po.sym} 380 -80 2 0 {name=R2
-W=0.69
-L=0.75
-model=res_xhigh_po
+C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_high_po_0p35.sym} 700 -400 3 1 {name=R9
+W=0.35
+L=5.4
+model=res_high_po_0p35
 spiceprefix=X
 mult=1}
-C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_xhigh_po.sym} 560 -80 2 0 {name=R3
-W=0.69
-L=0.75
-model=res_xhigh_po
+C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_high_po_0p35.sym} 200 -80 0 1 {name=R1
+W=0.35
+L=5.4
+model=res_high_po_0p35
 spiceprefix=X
 mult=1}
-C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_xhigh_po.sym} 740 -80 2 0 {name=R4
-W=0.69
-L=0.75
-model=res_xhigh_po
+C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_high_po_0p35.sym} 380 -80 0 1 {name=R2
+W=0.35
+L=5.2
+model=res_high_po_0p35
+spiceprefix=X
+mult=1}
+C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_high_po_0p35.sym} 560 -80 0 1 {name=R3
+W=0.35
+L=4.5
+model=res_high_po_0p35
+spiceprefix=X
+mult=1}
+C {/foss/pdk/sky130A/libs.tech/xschem/sky130_fd_pr/res_high_po_0p35.sym} 740 -80 0 1 {name=R4
+W=0.35
+L=4.5
+model=res_high_po_0p35
 spiceprefix=X
 mult=1}
