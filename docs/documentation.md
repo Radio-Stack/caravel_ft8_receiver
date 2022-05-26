@@ -69,5 +69,5 @@ And to determine the behavior of drain current past saturation:
 $$\int_0^LI_D\mathrm dx \ = \ \mu_{n}C_{OX}\int_0^{V_{GS}-V_{TH}}[V_{GS}-V_{TH}-V(x)]\mathrm dV$$
 
 $$
-\therefore \ I_D \ = \ \frac{1}{2}\mu_nC_{OX}\frac{W}{L}(V_{GS}-V_{TH})^2(1+\lambda V_{DS}) \ \ \ \ \mathrm{for} \ V_{DS}>V_{DSAT}
+\therefore \ I_D \ = \ \frac{1}{2}\mu_nC_{OX}\frac{W}{L}(V_{GS}-V_{TH})^2(1+\lambda V_{DS}) \ \ \ \ \forall \ V_{DS}>V_{DSAT}
 $$
