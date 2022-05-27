@@ -80,10 +80,13 @@ Typical FT8 recievers should be able to successfuly decode a received signal at 
 ### 3.1 &nbsp;&nbsp; Filter Derivation
 [image of matlab architecture] <br>
 Different topologies of bandpass filters were simulated to meet specification. The final decision was a 4th order Butterworth LC bandpass. This allowed for minimum insertion loss, nominal phase delay, and a relatively low noise figure. The generalized transfer function for it's frequency response has been provided below. 
+
 $$
 | \ H(j\omega) \ | = [1+(\frac{\omega}{\omega_{c}})^{2n}]^{-1/2}
 $$
+
 The intrinsic attenuation can be calculated aswell. 
+
 $$
 A_{d} = 10\log_{10}(1+(\frac{\omega}{\omega_{c}})^{2n})
 $$
