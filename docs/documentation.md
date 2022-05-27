@@ -3,9 +3,9 @@
 --- 
 ## Table of Contents
 1. Introduction
-\1.1. Introduction to FT8
-\1.2. Architecture Overview
-\1.3. Toolchain / Technology
+* 1.1. Introduction to FT8
+* 1.2. Architecture Overview
+* 1.3. Toolchain / Technology
 2. PDK Characterization
 3. Architecture Refinement
 4. Circuit Design and Simulation
