@@ -3,9 +3,9 @@
 --- 
 ## Table of Contents
 1. Introduction
-1.1. Introduction to FT8
-1.2. Architecture Overview
-1.3. Toolchain / Technology
+	1. Introduction to FT8
+	2. Architecture Overview
+	3. Toolchain / Technology
 2. PDK Characterization
 3. Architecture Refinement
 4. Circuit Design and Simulation
@@ -34,11 +34,12 @@ Proper characterization of the PDK devices is paramount for accurate circuit des
 ### Characterization of `nfet_01v8`
 
 #### 1. Sweep of $V_{GS}$
-[image of circuit]
+[image of circuit] <br/>
 Start by placing a `sky130_fd_pr__nfet_01v8` device with the default parameter values into a new schematic in Xschem. Attach a voltage source V1 to the gate and another V2 to the drain. Ensure that the bulk and source are grounded. Also ensure that V2 or $V_{DS}$ is held at $V_{DD}/2$ or 0.9V. Create a new code block and run a dc sweep of V1.
 ```spice 
 .control
-	dc V1 0 3 0.01
+	dc V1 0 3 0.01  % dc sweep of Vgs
+	plot -i(V2)     % plot drain current
 .endc
 .saveall
 ```
@@ -69,5 +70,23 @@ And to determine the behavior of drain current past saturation:
 $$\int_0^LI_D\mathrm dx \ = \ \mu_{n}C_{OX}\int_0^{V_{GS}-V_{TH}}[V_{GS}-V_{TH}-V(x)]\mathrm dV$$
 
 $$
-\therefore \ I_D \ = \ \frac{1}{2}\mu_nC_{OX}\frac{W}{L}(V_{GS}-V_{TH})^2(1+\lambda V_{DS}) \ \ \ \ \forall \ V_{DS}>V_{DSAT}
+\therefore \ \ I_D \ = \ \frac{1}{2}\mu_nC_{OX}\frac{W}{L}(V_{GS}-V_{TH})^2(1+\lambda V_{DS}) \ \ \ \forall \ V_{DS}>V_{DSAT}
 $$
+
+This concludes the basic characterization of the `nfet_01v8` device. In order to obtain accurate circuit simulations and successful circuit design, one should characterize every device they intend to use from the PDK. 
+
+## 3. Architecture Refinement
+Typical FT8 recievers should be able to successfuly decode a received signal at atleast -80dBm with an SNR as low as -21dB. In order to conform to these specifications, a strong, simulation-proven architecture will be needed. The basic architecture of the RF front end was known from the start; a filter following the antenna to pass the target band of 7-70 MHz, followed by a low-noise amplifier and ADC. 
+### 3.1 &nbsp;&nbsp; Filter Derivation
+[image of matlab architecture] <br>
+Different topologies of bandpass filters were simulated to meet specification. The final decision was a 4th order Butterworth LC bandpass. This allowed for minimum insertion loss, nominal phase delay, and a relatively low noise figure. The generalized transfer function for it's frequency response has been provided below. 
+$$
+| \ H(j\omega) \ | = [1+(\frac{\omega}{\omega_{c}})^{2n}]^{-1/2}
+$$
+The intrinsic attenuation can be calculated aswell. 
+$$
+A_{d} = 10\log_{10}(1+(\frac{\omega}{\omega_{c}})^{2n})
+$$
+
+### 3.2 &nbsp;&nbsp; LNA Derivation
+[image of matlab architecture] <br>
