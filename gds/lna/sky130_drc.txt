@@ -1011,17 +1011,48 @@
    <references>
    </references>
   </cell>
+  <cell>
+   <name>foldedcascode</name>
+   <variant/>
+   <references>
+    <ref>
+     <parent>lna4stage</parent>
+     <trans>r0 *1 -23.995,-1.045</trans>
+    </ref>
+   </references>
+  </cell>
+  <cell>
+   <name>foldedcascode$1</name>
+   <variant/>
+   <references>
+    <ref>
+     <parent>lna4stage</parent>
+     <trans>m0 *1 32.005,-22.715</trans>
+    </ref>
+   </references>
+  </cell>
  </cells>
  <items>
   <item>
    <tags/>
    <category>'m4.5ab'</category>
-   <cell>lna4stage</cell>
+   <cell>foldedcascode</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <image/>
    <values>
-    <value>edge-pair: (17.79,16.72;17.79,14.92)/(17.79,15.32;17.79,16.32)</value>
+    <value>edge-pair: (41.785,17.765;41.785,15.965)/(41.785,16.365;41.785,17.365)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m4.5ab'</category>
+   <cell>foldedcascode$1</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (41.785,17.765;41.785,15.965)/(41.785,16.365;41.785,17.365)</value>
    </values>
   </item>
  </items>
