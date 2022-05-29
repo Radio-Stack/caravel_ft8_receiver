@@ -1035,6 +1035,534 @@
  <items>
   <item>
    <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (170.45,-4.13;171.51,-4.13)/(171.23,-4.13;170.73,-4.13)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (58.45,-4.13;59.51,-4.13)/(59.23,-4.13;58.73,-4.13)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (150.985,-2.68;152.045,-2.68)/(151.765,-2.68;151.265,-2.68)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (-17.815,-2.68;-17.035,-2.68)/(-17.315,-2.68;-17.815,-2.68)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (94.185,-2.68;94.965,-2.68)/(94.685,-2.68;94.185,-2.68)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (40.045,-21.08;38.985,-21.08)/(39.265,-21.08;39.765,-21.08)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (60.365,-4.13;61.925,-4.13)/(61.645,-4.13;60.645,-4.13)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (150.185,-2.68;150.965,-2.68)/(150.685,-2.68;150.185,-2.68)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (94.985,-2.68;96.045,-2.68)/(95.765,-2.68;95.265,-2.68)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (-14.805,-21.08;-15.865,-21.08)/(-15.585,-21.08;-15.085,-21.08)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (-15.865,-2.68;-14.805,-2.68)/(-15.085,-2.68;-15.585,-2.68)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (41.17,-2.68;42.23,-2.68)/(41.95,-2.68;41.45,-2.68)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (97.195,-21.08;96.135,-21.08)/(96.415,-21.08;96.915,-21.08)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (173.925,-19.63;172.365,-19.63)/(172.645,-19.63;173.645,-19.63)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (171.51,-19.63;170.45,-19.63)/(170.73,-19.63;171.23,-19.63)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (38.185,-2.68;38.965,-2.68)/(38.685,-2.68;38.185,-2.68)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (-17.015,-2.68;-15.955,-2.68)/(-16.235,-2.68;-16.735,-2.68)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (97.17,-2.68;98.23,-2.68)/(97.95,-2.68;97.45,-2.68)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (42.23,-21.08;41.17,-21.08)/(41.45,-21.08;41.95,-21.08)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (59.51,-19.63;58.45,-19.63)/(58.73,-19.63;59.23,-19.63)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (38.985,-2.68;40.045,-2.68)/(39.765,-2.68;39.265,-2.68)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (153.17,-2.68;154.23,-2.68)/(153.95,-2.68;153.45,-2.68)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (172.365,-4.13;173.925,-4.13)/(173.645,-4.13;172.645,-4.13)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (-15.955,-21.08;-17.015,-21.08)/(-16.735,-21.08;-16.235,-21.08)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (-14.83,-2.68;-13.77,-2.68)/(-14.05,-2.68;-14.55,-2.68)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (3.51,-19.63;2.45,-19.63)/(2.73,-19.63;3.23,-19.63)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (5.925,-19.63;4.365,-19.63)/(4.645,-19.63;5.645,-19.63)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (152.045,-21.08;150.985,-21.08)/(151.265,-21.08;151.765,-21.08)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (94.965,-21.08;94.185,-21.08)/(94.185,-21.08;94.685,-21.08)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (150.965,-21.08;150.185,-21.08)/(150.185,-21.08;150.685,-21.08)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (153.195,-21.08;152.135,-21.08)/(152.415,-21.08;152.915,-21.08)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (38.965,-21.08;38.185,-21.08)/(38.185,-21.08;38.685,-21.08)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (61.925,-19.63;60.365,-19.63)/(60.645,-19.63;61.645,-19.63)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (114.45,-4.13;115.51,-4.13)/(115.23,-4.13;114.73,-4.13)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (116.365,-4.13;117.925,-4.13)/(117.645,-4.13;116.645,-4.13)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (40.135,-2.68;41.195,-2.68)/(40.915,-2.68;40.415,-2.68)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (115.51,-19.63;114.45,-19.63)/(114.73,-19.63;115.23,-19.63)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (152.135,-2.68;153.195,-2.68)/(152.915,-2.68;152.415,-2.68)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (98.23,-21.08;97.17,-21.08)/(97.45,-21.08;97.95,-21.08)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (96.135,-2.68;97.195,-2.68)/(96.915,-2.68;96.415,-2.68)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (154.23,-21.08;153.17,-21.08)/(153.45,-21.08;153.95,-21.08)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (2.45,-4.13;3.51,-4.13)/(3.23,-4.13;2.73,-4.13)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (-17.035,-21.08;-17.815,-21.08)/(-17.815,-21.08;-17.315,-21.08)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (-13.77,-21.08;-14.83,-21.08)/(-14.55,-21.08;-14.05,-21.08)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (41.195,-21.08;40.135,-21.08)/(40.415,-21.08;40.915,-21.08)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (96.045,-21.08;94.985,-21.08)/(95.265,-21.08;95.765,-21.08)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (117.925,-19.63;116.365,-19.63)/(116.645,-19.63;117.645,-19.63)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m2.3ab'</category>
+   <cell>lna4stage</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (4.365,-4.13;5.925,-4.13)/(5.645,-4.13;4.645,-4.13)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
    <category>'m4.5ab'</category>
    <cell>foldedcascode</cell>
    <visited>false</visited>
