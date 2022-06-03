@@ -5,3 +5,5 @@ The Maverick-603 is an RF receiver capable of acquiring FT8 signals between 7MHz
 Our target frequencies (7-70 MHz) were chosen because the most popular FT8 bands fall within this. With this frequency range, we will be able to receive signals from around the world with high accuracy. The use of our LNA will also give the chip the ability to amplify very low strength signals, necessary for an effective FT8 receiver.
 
 The Maverick-603 will include an LNA and an ADC. These components make up the bulk of the receiver functionality and remaining components will be placed directly on the PCB to maximize local functionality.
+
+![architecture](https://raw.githubusercontent.com/Radio-Stack/caravel_ft8_receiver/main/docs/Screen%20Shot%202022-06-03%20at%201.39.02%20PM.png)
