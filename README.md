@@ -7,3 +7,4 @@ Our target frequencies (7-70 MHz) were chosen because the most popular FT8 bands
 The Maverick-603 will include an LNA and an ADC. These components make up the bulk of the receiver functionality and remaining components will be placed directly on the PCB to maximize local functionality.
 
 ![architecture](https://raw.githubusercontent.com/Radio-Stack/caravel_ft8_receiver/main/docs/Screen%20Shot%202022-06-03%20at%201.39.02%20PM.png)
+*Basic FT8 Receiver Architecture*
