@@ -1011,16 +1011,6 @@
    <references>
    </references>
   </cell>
-  <cell>
-   <name>adc</name>
-   <variant/>
-   <references>
-    <ref>
-     <parent>user_analog_project_wrapper</parent>
-     <trans>r0 *1 1714.44,2697.68</trans>
-    </ref>
-   </references>
-  </cell>
  </cells>
  <items>
   <item>
@@ -1031,7 +1021,7 @@
    <multiplicity>1</multiplicity>
    <image/>
    <values>
-    <value>edge-pair: (611.84,2794.57;611.84,2791.77)/(611.84,2792.17;611.84,2794.17)</value>
+    <value>edge-pair: (895.5,2794.565;895.5,2791.765)/(895.5,2792.165;895.5,2794.165)</value>
    </values>
   </item>
   <item>
@@ -1053,51 +1043,62 @@
    <multiplicity>1</multiplicity>
    <image/>
    <values>
+    <value>edge-pair: (1658.56,1200.285;1658.56,1201.485)/(1658.56,1201.085;1658.56,1200.285)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m4.5ab'</category>
+   <cell>user_analog_project_wrapper</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (1578.945,1147.91;1578.945,1146.71)/(1578.945,1147.11;1578.945,1147.91)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m4.5ab'</category>
+   <cell>user_analog_project_wrapper</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (1606.895,1202.585;1606.895,1203.785)/(1606.895,1203.385;1606.895,1202.585)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m4.5ab'</category>
+   <cell>user_analog_project_wrapper</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (1578.945,1256.96;1578.945,1255.76)/(1578.945,1255.76;1578.945,1256.56)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m4.5ab'</category>
+   <cell>user_analog_project_wrapper</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>edge-pair: (611.84,2794.57;611.84,2791.77)/(611.84,2792.17;611.84,2794.17)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'m4.5ab'</category>
+   <cell>user_analog_project_wrapper</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
     <value>edge-pair: (924.14,2791.765;924.14,2794.565)/(924.14,2794.165;924.14,2792.165)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'m4.5ab'</category>
-   <cell>user_analog_project_wrapper</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <image/>
-   <values>
-    <value>edge-pair: (895.5,2794.565;895.5,2791.765)/(895.5,2792.165;895.5,2794.165)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'m4.5ab'</category>
-   <cell>user_analog_project_wrapper</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <image/>
-   <values>
-    <value>edge-pair: (895.5,2750.82;895.5,2748.02)/(895.5,2748.42;895.5,2750.42)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'m4.5ab'</category>
-   <cell>adc</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <image/>
-   <values>
-    <value>edge-pair: (419.775,134.34;419.775,133.14)/(419.775,133.14;419.775,133.94)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'m4.5ab'</category>
-   <cell>adc</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <image/>
-   <values>
-    <value>edge-pair: (419.775,25.29;419.775,24.09)/(419.775,24.49;419.775,25.29)</value>
    </values>
   </item>
  </items>
